@@ -17,9 +17,7 @@ namespace docspin.Controllers
 	[InitializeSimpleMembership]
 	public class AccountController : Controller
 	{
-		//
 		// GET: /Account/Login
-
 		[AllowAnonymous]
 		public ActionResult Login(string returnUrl)
 		{
@@ -27,9 +25,7 @@ namespace docspin.Controllers
 			return View();
 		}
 
-		//
 		// POST: /Account/Login
-
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
@@ -45,9 +41,7 @@ namespace docspin.Controllers
 			return View(model);
 		}
 
-		//
 		// POST: /Account/LogOff
-
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult LogOff()
@@ -57,18 +51,14 @@ namespace docspin.Controllers
 			return RedirectToAction("Index", "Home");
 		}
 
-		//
 		// GET: /Account/Register
-
 		[AllowAnonymous]
 		public ActionResult Register()
 		{
 			return View();
 		}
 
-		//
 		// POST: /Account/Register
-
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
@@ -93,9 +83,7 @@ namespace docspin.Controllers
 			return View(model);
 		}
 
-		//
 		// POST: /Account/Disassociate
-
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Disassociate(string provider, string providerUserId)
@@ -122,9 +110,7 @@ namespace docspin.Controllers
 			return RedirectToAction("Manage", new { Message = message });
 		}
 
-		//
 		// GET: /Account/Manage
-
 		public ActionResult Manage(ManageMessageId? message)
 		{
 			ViewBag.StatusMessage =
@@ -137,9 +123,7 @@ namespace docspin.Controllers
 			return View();
 		}
 
-		//
 		// POST: /Account/Manage
-
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult Manage(LocalPasswordModel model)
@@ -162,14 +146,10 @@ namespace docspin.Controllers
 						changePasswordSucceeded = false;
 					}
 
-					if (changePasswordSucceeded)
-					{
+					if (changePasswordSucceeded) {
 						return RedirectToAction("Manage", new { Message = ManageMessageId.ChangePasswordSuccess });
 					}
-					else
-					{
 						ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
-					}
 				}
 			}
 			else
@@ -200,9 +180,7 @@ namespace docspin.Controllers
 			return View(model);
 		}
 
-		//
 		// POST: /Account/ExternalLogin
-
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
@@ -211,9 +189,7 @@ namespace docspin.Controllers
 			return new ExternalLoginResult(provider, Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
 		}
 
-		//
 		// GET: /Account/ExternalLoginCallback
-
 		[AllowAnonymous]
 		public ActionResult ExternalLoginCallback(string returnUrl)
 		{
@@ -244,9 +220,7 @@ namespace docspin.Controllers
 			}
 		}
 
-		//
 		// POST: /Account/ExternalLoginConfirmation
-
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
@@ -290,9 +264,7 @@ namespace docspin.Controllers
 			return View(model);
 		}
 
-		//
 		// GET: /Account/ExternalLoginFailure
-
 		[AllowAnonymous]
 		public ActionResult ExternalLoginFailure()
 		{
