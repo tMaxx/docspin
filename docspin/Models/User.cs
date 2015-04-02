@@ -20,6 +20,7 @@ namespace docspin.Models
             this.DocumentVersion = new HashSet<DocumentVersion>();
             this.Comments = new HashSet<DocumentComment>();
             this.RepositoryACL = new HashSet<RepositoryACL>();
+            this.DocumentACL = new HashSet<DocumentACL>();
         }
     
         public int Id { get; set; }
@@ -33,6 +34,6 @@ namespace docspin.Models
         public virtual ICollection<DocumentVersion> DocumentVersion { get; set; }
         public virtual ICollection<DocumentComment> Comments { get; set; }
         public virtual ICollection<RepositoryACL> RepositoryACL { get; set; }
-        public virtual DocumentACL DocumentACL { get; set; }
+        public virtual ICollection<DocumentACL> DocumentACL { get; set; }
     }
 }

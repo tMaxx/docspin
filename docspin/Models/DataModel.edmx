@@ -194,8 +194,8 @@
           <End Type="DataModel.DocumentACL" Role="DocumentACL" Multiplicity="*" />
         </Association>
         <Association Name="DocumentACLUser">
-          <End Type="DataModel.DocumentACL" Role="DocumentACL" Multiplicity="1" />
-          <End Type="DataModel.User" Role="User" Multiplicity="*" />
+          <End Type="DataModel.DocumentACL" Role="DocumentACL" Multiplicity="*" />
+          <End Type="DataModel.User" Role="User" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>

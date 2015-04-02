@@ -4,26 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3d7dd380afe5451fb3a6d8f94ac9e01b" Name="Diagram1" ZoomLevel="86" >
-        <EntityTypeShape EntityType="DataModel.Repository" Width="1.875" PointX="7.75" PointY="7.25" FillColor="DarkOrange" />
-        <EntityTypeShape EntityType="DataModel.RepositoryDocument" Width="1.875" PointX="10.375" PointY="7.25" />
-        <EntityTypeShape EntityType="DataModel.RepositorySupervisor" Width="1.875" PointX="7.75" PointY="2.75" FillColor="DarkOrange" />
+      <Diagram DiagramId="3d7dd380afe5451fb3a6d8f94ac9e01b" Name="DataModelDiagram" ZoomLevel="86" >
+        <EntityTypeShape EntityType="DataModel.Repository" Width="1.875" PointX="7.75" PointY="7.25" FillColor="DarkOrange" IsExpanded="false" />
+        <EntityTypeShape EntityType="DataModel.RepositoryDocument" Width="1.875" PointX="10.375" PointY="7.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="DataModel.RepositorySupervisor" Width="1.875" PointX="7.75" PointY="2.75" FillColor="DarkOrange" IsExpanded="false" />
         <AssociationConnector Association="DataModel.RepositoryRepositorSupervisor" />
-        <EntityTypeShape EntityType="DataModel.DocumentVersion" Width="2" PointX="14.375" PointY="7.25" />
+        <EntityTypeShape EntityType="DataModel.DocumentVersion" Width="2" PointX="14.375" PointY="7.25" IsExpanded="false" />
         <AssociationConnector Association="DataModel.RepositoryDocumentDocumentVersion" />
         <AssociationConnector Association="DataModel.RepositoryRepositoryDocument" />
-        <EntityTypeShape EntityType="DataModel.User" Width="1.875" PointX="10.375" PointY="1.25" FillColor="Maroon" />
+        <EntityTypeShape EntityType="DataModel.User" Width="1.875" PointX="10.375" PointY="1.25" FillColor="Maroon" IsExpanded="false" />
         <AssociationConnector Association="DataModel.UserRepositorySupervisor" />
         <AssociationConnector Association="DataModel.UserDocumentVersion" ManuallyRouted="false" >
         </AssociationConnector>
-        <EntityTypeShape EntityType="DataModel.DocumentComment" Width="2.125" PointX="13" PointY="2.375" FillColor="Navy" />
+        <EntityTypeShape EntityType="DataModel.DocumentComment" Width="2.125" PointX="13" PointY="2.375" FillColor="Navy" IsExpanded="false" />
         <AssociationConnector Association="DataModel.UserEntity1" />
         <AssociationConnector Association="DataModel.RepositoryDocumentEntity1" ManuallyRouted="false" >
         </AssociationConnector>
-        <EntityTypeShape EntityType="DataModel.RepositoryACL" Width="1.5" PointX="9.25" PointY="5" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="DataModel.RepositoryACL" Width="1.5" PointX="9.25" PointY="5" FillColor="ForestGreen" IsExpanded="false" />
         <AssociationConnector Association="DataModel.RepositoryRepositoryACL" />
         <AssociationConnector Association="DataModel.UserRepositoryACL" />
-        <EntityTypeShape EntityType="DataModel.DocumentACL" Width="1.5" PointX="11.875" PointY="5" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="DataModel.DocumentACL" Width="1.5" PointX="11.875" PointY="5" FillColor="ForestGreen" IsExpanded="false" />
         <AssociationConnector Association="DataModel.RepositoryDocumentDocumentACL" />
         <AssociationConnector Association="DataModel.DocumentACLUser" />
         <EntityTypeShape EntityType="DataModel.UserProfile" Width="1.5" PointX="6.375" PointY="0.875" />

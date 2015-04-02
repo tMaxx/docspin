@@ -14,15 +14,10 @@ namespace docspin.Models
     
     public partial class DocumentACL
     {
-        public DocumentACL()
-        {
-            this.User = new HashSet<User>();
-        }
-    
         public int Id { get; set; }
         public byte ACS { get; set; }
     
         public virtual RepositoryDocument RepositoryDocument { get; set; }
-        public virtual ICollection<User> User { get; set; }
+        public virtual User User { get; set; }
     }
 }
