@@ -7,19 +7,18 @@
     <h2>@ViewBag.Message</h2>
 </hgroup>
 
-<article>
-    <p>
-        Use this area to provide additional information.
-    </p>
 
-    <p>
-        Use this area to provide additional information.
-    </p>
+@if (HttpContext.Current.IsDebuggingEnabled)
+{
+	<article>
+		<h3>Debug info</h3>
+		<p>
+			FileManager.FileFolder: @docspin.Util.FileManager.FileFolder
+		</p>
 
-    <p>
-        Use this area to provide additional information.
-    </p>
-</article>
+
+	</article>
+}
 
 <aside>
     <h3>Aside Title</h3>

@@ -12,24 +12,25 @@ namespace docspin.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RepositoryDocument
+    public partial class Document
     {
-        public RepositoryDocument()
+        public Document()
         {
             this.DocumentVersion = new HashSet<DocumentVersion>();
-            this.DocumentComment = new HashSet<DocumentComment>();
+            this.Comments = new HashSet<Comment>();
             this.DocumentACL = new HashSet<DocumentACL>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
+        public Nullable<short> Description { get; set; }
         public System.DateTime TsCreated { get; set; }
         public System.DateTime TsModified { get; set; }
-        public short Property1 { get; set; }
+        public AccessControlSetting ACS { get; set; }
     
         public virtual ICollection<DocumentVersion> DocumentVersion { get; set; }
         public virtual Repository Repository { get; set; }
-        public virtual ICollection<DocumentComment> DocumentComment { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<DocumentACL> DocumentACL { get; set; }
     }
 }

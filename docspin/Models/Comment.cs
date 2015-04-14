@@ -12,13 +12,13 @@ namespace docspin.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class DocumentComment
+    public partial class Comment
     {
         public int Id { get; set; }
         public string Content { get; set; }
         public System.DateTime Timestamp { get; set; }
     
         public virtual User Author { get; set; }
-        public virtual RepositoryDocument Document { get; set; }
+        public virtual Document Document { get; set; }
     }
 }

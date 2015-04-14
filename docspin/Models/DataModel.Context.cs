@@ -26,11 +26,11 @@ namespace docspin.Models
         }
     
         public virtual DbSet<Repository> RepositorySet { get; set; }
-        public virtual DbSet<RepositoryDocument> RepositoryDocumentSet { get; set; }
+        public virtual DbSet<Document> DocumentSet { get; set; }
         public virtual DbSet<RepositorySupervisor> RepositorySupervisorSet { get; set; }
         public virtual DbSet<DocumentVersion> DocumentVersionSet { get; set; }
         public virtual DbSet<User> UserSet { get; set; }
-        public virtual DbSet<DocumentComment> DocumentCommentSet { get; set; }
+        public virtual DbSet<Comment> CommentSet { get; set; }
         public virtual DbSet<RepositoryACL> RepositoryACLSet { get; set; }
         public virtual DbSet<DocumentACL> DocumentACLSet { get; set; }
     }

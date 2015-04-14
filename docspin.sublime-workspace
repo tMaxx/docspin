@@ -1,0 +1,2501 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"shi",
+				"shift+alt+ctrl+o"
+			],
+			[
+				"us",
+				"usingt	Using statement (templated)"
+			],
+			[
+				"getcoord_ptr",
+				"getcoord_ptrstruct"
+			],
+			[
+				"print",
+				"print_coords"
+			],
+			[
+				"not",
+				"notify"
+			],
+			[
+				"submi",
+				"submitted"
+			],
+			[
+				"c_lb",
+				"c_blueish"
+			],
+			[
+				"font_",
+				"font_main"
+			],
+			[
+				"render",
+				"renderSubInput"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"items",
+				"items_on_page"
+			],
+			[
+				"accoun",
+				"accountName"
+			],
+			[
+				"process",
+				"_processHooks"
+			],
+			[
+				"phpmd_",
+				"phpmd_command_on_save"
+			],
+			[
+				"QR",
+				"QRCode"
+			],
+			[
+				"attr",
+				"attributes"
+			],
+			[
+				"selec",
+				"select_short"
+			],
+			[
+				"ts",
+				"ts_publ"
+			],
+			[
+				"array_in",
+				"array_intersect_key"
+			],
+			[
+				"att",
+				"attributes"
+			],
+			[
+				"methdo",
+				"method_exists"
+			],
+			[
+				"Errro",
+				"Error"
+			],
+			[
+				"def",
+				"definition"
+			],
+			[
+				"max-",
+				"max-width: "
+			],
+			[
+				"r3v_",
+				"r3v_DB_nd"
+			],
+			[
+				"ENGINE",
+				"ENGINE=InnoDB"
+			],
+			[
+				"c_fon",
+				"c_font_imp"
+			],
+			[
+				"c_bl",
+				"c_lblue"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			],
+			[
+				"border-botto",
+				"border-bottom-color: "
+			],
+			[
+				"ENT_",
+				"ENT_HTML5"
+			],
+			[
+				"format",
+				"formatErrorLine"
+			],
+			[
+				"HTTPf",
+				"HTTPflush"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"ENGIN",
+				"ENGINE=InnoDB"
+			],
+			[
+				"TBE",
+				"TABLE"
+			],
+			[
+				"EN",
+				"ENGINE=InnoDB"
+			],
+			[
+				"array_merge",
+				"array_merge_recursive"
+			],
+			[
+				"serve",
+				"servepath"
+			],
+			[
+				"run",
+				"run"
+			],
+			[
+				"Err",
+				"Error400"
+			],
+			[
+				"FORM",
+				"FROM"
+			],
+			[
+				"revoke",
+				"revokeToken"
+			],
+			[
+				"json_",
+				"json_decode"
+			],
+			[
+				"clien",
+				"client_secret"
+			],
+			[
+				"array_replace",
+				"array_replace_recursive"
+			],
+			[
+				"con",
+				"conf"
+			],
+			[
+				"include",
+				"include_path"
+			],
+			[
+				"add",
+				"addToTitle"
+			],
+			[
+				"resul",
+				"result"
+			],
+			[
+				"HTML",
+				"HTML_head"
+			],
+			[
+				"strcmp",
+				"strncmp"
+			],
+			[
+				"ob_end_",
+				"ob_end_flush"
+			],
+			[
+				"ERROR",
+				"Error"
+			],
+			[
+				"Eror",
+				"Error"
+			],
+			[
+				"TITLE",
+				"TITLE_ADD"
+			],
+			[
+				"proe",
+				"protected"
+			],
+			[
+				"is_",
+				"is_dev_hostname_check"
+			],
+			[
+				"cur",
+				"current"
+			],
+			[
+				"explici",
+				"explicit_load"
+			],
+			[
+				"route",
+				"route_dir"
+			],
+			[
+				"read",
+				"readJsonFromFile"
+			],
+			[
+				"repo",
+				"repo_only"
+			],
+			[
+				"error_",
+				"error_reporting"
+			],
+			[
+				"lig",
+				"light_grey"
+			],
+			[
+				"__",
+				"__req__"
+			],
+			[
+				"class",
+				"class	class …"
+			],
+			[
+				"call_u",
+				"call_user_func_array"
+			],
+			[
+				"call_user",
+				"call_user_func"
+			],
+			[
+				"TRE",
+				"TRUE"
+			],
+			[
+				"return",
+				"returnDef"
+			],
+			[
+				"r3v",
+				"r3v_VERSION"
+			],
+			[
+				"mic",
+				"microauth"
+			],
+			[
+				"user",
+				"userid"
+			],
+			[
+				"lo",
+				"login"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"reg",
+				"register"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"me",
+				"meid"
+			],
+			[
+				"user_",
+				"user_id"
+			],
+			[
+				"Sele",
+				"SELECT"
+			],
+			[
+				"is",
+				"isList"
+			],
+			[
+				"stmt_",
+				"stmt_types"
+			],
+			[
+				"fun",
+				"fun	function …"
+			],
+			[
+				"insert",
+				"insert_id"
+			],
+			[
+				"sta",
+				"static"
+			],
+			[
+				"tras",
+				"transport"
+			],
+			[
+				"carr",
+				"Carrier"
+			],
+			[
+				"av",
+				"availability"
+			],
+			[
+				"ts_",
+				"ts_start"
+			],
+			[
+				"stmt",
+				"stmt_types"
+			],
+			[
+				"affectedR",
+				"getAffectedRows"
+			],
+			[
+				"ns",
+				"n_shares"
+			],
+			[
+				"ou",
+				"out_files"
+			],
+			[
+				"share",
+				"shares_left"
+			],
+			[
+				"out",
+				"out_file"
+			],
+			[
+				"shar",
+				"shares_left"
+			],
+			[
+				"call",
+				"call_user_func_array"
+			],
+			[
+				"list",
+				"list_id"
+			],
+			[
+				"escape",
+				"mysqli_escape_string"
+			],
+			[
+				"User",
+				"UserFriends"
+			],
+			[
+				"fot",
+				"fontimp"
+			],
+			[
+				"font-",
+				"font-variant"
+			],
+			[
+				"end",
+				"endif"
+			],
+			[
+				"a",
+				"a	Tag"
+			],
+			[
+				"cre",
+				"createQueryBuilder"
+			],
+			[
+				"bus",
+				"busId"
+			],
+			[
+				"bus_",
+				"bus_availability"
+			],
+			[
+				"query",
+				"query_result"
+			],
+			[
+				"af",
+				"after"
+			],
+			[
+				"Bus",
+				"BusAvailability"
+			],
+			[
+				"Valu",
+				"VALUE"
+			],
+			[
+				"dp",
+				"dp	Doctrine String Property"
+			],
+			[
+				"da",
+				"da	Doctrine Many To One Association"
+			],
+			[
+				"conte",
+				"content-type"
+			],
+			[
+				"HTTP",
+				"HTTPheaders"
+			],
+			[
+				"php-",
+				"php-getset	Create getter and setter methods"
+			],
+			[
+				"php",
+				"php_check_syntax"
+			],
+			[
+				"flush",
+				"flushHeaders"
+			],
+			[
+				"ob_end",
+				"ob_end_clean"
+			],
+			[
+				"lis",
+				"list_id"
+			],
+			[
+				"eror",
+				"error_list"
+			],
+			[
+				"erro",
+				"error_list"
+			],
+			[
+				"get_",
+				"get_called_class"
+			],
+			[
+				"crud",
+				"crudBus"
+			],
+			[
+				"ret",
+				"ret	return"
+			],
+			[
+				"carrier",
+				"carrierId"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "docspin/Views/Shared/_Layout.cshtml",
+			"settings":
+			{
+				"buffer_size": 1745,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Views/Home/Contact.cshtml",
+			"settings":
+			{
+				"buffer_size": 1097,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Views/Home/Index.cshtml",
+			"settings":
+			{
+				"buffer_size": 312,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Views/Web.config",
+			"settings":
+			{
+				"buffer_size": 2863,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/App_Start/RouteConfig.cs",
+			"settings":
+			{
+				"buffer_size": 519,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Web.config",
+			"settings":
+			{
+				"buffer_size": 10940,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Controllers/AccountController.cs",
+			"settings":
+			{
+				"buffer_size": 12085,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Models/DocumentACL.cs",
+			"settings":
+			{
+				"buffer_size": 764,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/miki/.config/sublime-text-3/Packages/OmniSharp/PrebuiltOmniSharpServer/config.json",
+			"settings":
+			{
+				"buffer_size": 8062,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?xml version=\"1.0\"?>\n\n<!-- For more information on using Web.config transformation visit http://go.microsoft.com/fwlink/?LinkId=125889 -->\n\n<configuration xmlns:xdt=\"http://schemas.microsoft.com/XML-Document-Transform\">\n  <!--\n    In the example below, the \"SetAttributes\" transform will change the value of \n    \"connectionString\" to use \"ReleaseSQLServer\" only when the \"Match\" locator \n    finds an atrribute \"name\" that has a value of \"MyDB\".\n    \n    <connectionStrings>\n      <add name=\"MyDB\" \n        connectionString=\"Data Source=ReleaseSQLServer;Initial Catalog=MyReleaseDB;Integrated Security=True\" \n        xdt:Transform=\"SetAttributes\" xdt:Locator=\"Match(name)\"/>\n    </connectionStrings>\n  -->\n  <assemblies>\n    <add assembly=\"log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821\" />\n  </assemblies>\n\n  <system.web>\n    <!--\n      In the example below, the \"Replace\" transform will replace the entire \n      <customErrors> section of your Web.config file.\n      Note that because there is only one customErrors section under the \n      <system.web> node, there is no need to use the \"xdt:Locator\" attribute.\n      \n      <customErrors defaultRedirect=\"GenericError.htm\"\n        mode=\"RemoteOnly\" xdt:Transform=\"Replace\">\n        <error statusCode=\"500\" redirect=\"InternalError.htm\"/>\n      </customErrors>\n    -->\n  </system.web>\n</configuration>",
+			"file": "docspin/Web.Debug.config",
+			"file_size": 1285,
+			"file_write_time": 130722663590000000,
+			"settings":
+			{
+				"buffer_size": 1384,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Properties/AssemblyInfo.cs",
+			"settings":
+			{
+				"buffer_size": 1384,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin/Models/AccountModels.cs",
+			"settings":
+			{
+				"buffer_size": 2451,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "docspin.sublime-project",
+			"settings":
+			{
+				"buffer_size": 110,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nOmniSharp:\n---------\n\n  Welcome to OmniSharpSublime!\n  \n  You can now edit C#, build your projects, run your tests, get intellisense, refactor like a pro, be shown syntax errors and lots more!\n  \n  For more information see the README and Wiki here: https://github.com/OmniSharp/omnisharp-sublime\n  \n  \n  ",
+			"settings":
+			{
+				"buffer_size": 355,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "pareo",
+		"selected_items":
+		[
+			[
+				"pareo",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"paco di",
+				"Package Control: Disable Package"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"paco in",
+				"Package Control: Install Package"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"me",
+				"View: Toggle Menu"
+			],
+			[
+				"brows",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pacoin",
+				"Package Control: Install Package"
+			],
+			[
+				"PHP Code Sniffer: ",
+				"PHP Code Sniffer: Clear sniffer marks"
+			],
+			[
+				"pacoi",
+				"Package Control: Install Package"
+			],
+			[
+				"snippet: ret",
+				"Snippet: return null"
+			],
+			[
+				"paore",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"paco re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: return array"
+			],
+			[
+				"pare",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"paco en",
+				"Package Control: Enable Package"
+			],
+			[
+				"preo",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"pre",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"syntax jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"json",
+				"Indent JSON"
+			],
+			[
+				"",
+				"Auto indent"
+			],
+			[
+				"paco ",
+				"Package Control: Disable Package"
+			],
+			[
+				"pack",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"paco",
+				"Package Control: Disable Package"
+			],
+			[
+				"paco de",
+				"Package Control: Disable Package"
+			],
+			[
+				"pacre",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"paco li",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"reso",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"package",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packag",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packop",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packare on",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packageres",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"packagre",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"resou",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"resi",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"package control",
+				"Package Control: Disable Package"
+			],
+			[
+				"packagere",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"pres",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"resor",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"pack res",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"re",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"res",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"get",
+				"Snippet: Create getter and setter methods"
+			],
+			[
+				"paci",
+				"Package Control: Install Package"
+			],
+			[
+				"paco l",
+				"Package Control: List Packages"
+			],
+			[
+				"paci in",
+				"Package Control: Create Binary Package File"
+			],
+			[
+				"pacore",
+				"Package Control: Remove Package"
+			],
+			[
+				"au",
+				"Autoprefix CSS"
+			],
+			[
+				"paco i",
+				"Package Control: List Packages"
+			],
+			[
+				"PACO ",
+				"Package Control: List Packages"
+			],
+			[
+				"pacin",
+				"Package Control: Install Package"
+			],
+			[
+				"paco in ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 601.0
+	},
+	"console":
+	{
+		"height": 288.0,
+		"history":
+		[
+			"import os; print(os.environ[\"PATH\"])",
+			"print(os.environ[\"PATH\"])",
+			"print os.environ[\"PATH\"]",
+			"reindent();",
+			"reindent",
+			"view.run_command(\"scope_to_clipboard\")",
+			"User.scope_to_clipboard()",
+			"scope_to_clipboard()",
+			"scope_to_clipboard",
+			"User.scope_to_clipboard",
+			"view.scope_name(view.sel()[0].b)",
+			"sublime.set_clipboard(view.scope_name(view.sel()[0].b));",
+			"view.extract_scope(view.sel()[0].b)",
+			"sublime.set_clipboard(view.extract_scope(view.sel()[0].b))",
+			"view.sel()[0].b",
+			"sublime.set_clipboard(view.syntax_name(view.sel()[0].b));",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())",
+			"view.run_command(\"remarkd\")",
+			"view.run_command(\"remarkdaaaaaaaaaaaaaaaaaaa\")",
+			"view.run_command(\"remarkd\")",
+			"view.run_command(\"remark\")"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/miki/Dropbox/Projects/docspin",
+		"/home/miki/Dropbox/Projects/docspin/docspin",
+		"/home/miki/Dropbox/Projects/docspin/docspin/Controllers",
+		"/home/miki/Dropbox/Projects/docspin/docspin/Models",
+		"/home/miki/Dropbox/Projects/docspin/docspin/Properties"
+	],
+	"file_history":
+	[
+		"/home/miki/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/miki/.config/sublime-text-3/Packages/User/Plain text.sublime-settings",
+		"/home/miki/Dropbox/Projects/Oblivion/Oblivion Spacegray.tmTheme",
+		"/home/miki/Pobrane/main.cpp",
+		"/home/miki/Pobrane/The Fault in Our Stars (2014)/The.Fault.in.Our.Stars.2014.720p.BluRay.x264.YIFY.txt",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/static/res/_basic.scss",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Auth/User.php",
+		"/home/miki/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/miki/Dropbox/var/todo.txt",
+		"/home/miki/Dropbox/Projects/r3v/mod/mods.json",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/admin/blog_page.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/CRUD/CRUD.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/CRUD/Object.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/admin/blog.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/about.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/admin/index.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Conf.php",
+		"/home/miki/Dropbox/Projects/r3v/config.env",
+		"/home/miki/Dropbox/Projects/r3v/config.json",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/admin/locker.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/admin/locker.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/static/res/script.js",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/static/control/index.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/static/res/style.scss",
+		"/home/miki/Dropbox/Projects/r3v/README.md",
+		"/home/miki/Dropbox/Projects/r3v/sys/_init.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/blog/index.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/Checkbox.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/View.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/Textarea.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/Multiple.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/scssphp/scss.inc.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/parsedown/test/data/special_characters.html",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Vars.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/scssphp/site/style.scss",
+		"/home/miki/.config/sublime-text-3/Packages/Alignment/Base File.sublime-settings",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/index.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/index.template.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/class/tmx/Notify.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/db.sql",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/class/Elem.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Errors.php",
+		"/home/miki/Dropbox/Projects/r3v/index.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/blog/page.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/admin/blog_entry.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/blog/header.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/blog/list.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/DB/Base.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/DB/Table.php",
+		"/home/miki/.config/sublime-text-3/Packages/Phpcs/phpcs.py",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/Base.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/blog.php",
+		"/home/miki/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/blog/single.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/View/Explicit.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/admin/index.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/locker.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/locker_auth.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/locker.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/success.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/google-authenticator/src/Symm/GoogleAuthenticator/GoogleAuthenticator.php",
+		"/home/miki/.config/sublime-text-3/Packages/User/phpcs.sublime-settings",
+		"/home/miki/.config/sublime-text-3/Packages/Phpcs/phpcs.sublime-settings",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/Date.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/Submit.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/Select.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Field/IBase.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/google-authenticator/src/Symm/GoogleAuthenticator/QRCodeGenerator/EndroidQrCodeGenerator.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/endroid-qrcode/src/Endroid/QrCode/QrCode.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/google-authenticator/example/index.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/admin/about.php",
+		"/home/miki/Dropbox/Projects/Oblivion/README.md",
+		"/home/miki/Dropbox/Projects/Oblivion/Clouds Midnight.tmTheme",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/index.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form/Field/Checkbox.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form/Field/Select.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form/Field/Textarea.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form/Field/Base.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form/Form.php",
+		"/home/miki/Dropbox/Projects/r3v/rev.sublime-workspace",
+		"/home/miki/Dropbox/Projects/r3v/rev.sublime-project",
+		"/home/miki/.config/sublime-text-3/Packages/PHP/php-$this.sublime-snippet",
+		"/home/miki/.config/sublime-text-3/Packages/PHP/Indentation Rules.tmPreferences",
+		"/home/miki/.config/sublime-text-3/Packages/PHP/Constructor.sublime-snippet",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/DB/IInstance.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/DB/ISave.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/DB/_factory.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/static/res/mobile.scss",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Console.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/File.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Auth/Session.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Auth/Role.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form/Field/Date.php",
+		"/home/miki/var/appengine-python-flask-skeleton/app.yaml",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/form/test.json",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Form/Field/IBase.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/DB/Saveable.php",
+		"/home/miki/.config/sublime-text-3/Packages/User/php __set().sublime-snippet",
+		"/home/miki/.config/sublime-text-3/Packages/User/php __get().sublime-snippet",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Mod.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Common.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/rev/Mail/Mail.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/Vars.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/Auth/User.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/Console.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/DB/Base.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/DB/Instance.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/Mod.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/old_view/user/friends.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/boris/lib/Boris/EvalWorker.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/lib/boris/lib/Boris/Boris.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/ext/scssphp/scss.inc.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/static/res/debug.scss",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/test.html",
+		"/home/miki/Dropbox/var/arch/revX-master/demo.html",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/user/index.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/DB/Error.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/Errors.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/View.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/class/tmx/Blog.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/blog/index.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/control/error.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/error.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/View/Explicit.php",
+		"/home/miki/Dropbox/Projects/r3v/mod/tmx/main/view/blog/test.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/Auth/Role.php",
+		"/home/miki/Dropbox/Projects/r3v/sys/r3v/Auth/Session.php"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"/home/miki/Dropbox/Projects/r3v/sys/rev",
+			"/home/miki/Dropbox/Projects/r3v/sys/r3v/DB",
+			"/home/miki/Dropbox/Projects/r3v/mod/boris/lib/Boris",
+			"/home/miki/Dropbox/Projects/r3v/sys/r3v/DB",
+			"/home/miki/Dropbox/Projects/r3v/mod/boris/lib/Boris"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"case",
+			"namespace",
+			"},",
+			"\",\"",
+			"\":",
+			":",
+			"		//\n",
+			"o",
+			"i",
+			"t::m",
+			"wsk_punkt",
+			">>",
+			">",
+			"oord_pro",
+			"coor",
+			"point",
+			"struct ",
+			"struct",
+			"*",
+			"_y",
+			"_x",
+			"Pvar",
+			"self::$env_type",
+			"2",
+			"big",
+			"crud->obj",
+			"object",
+			"object()",
+			"box",
+			"$cmd",
+			"$_",
+			";",
+			"fun",
+			"blog",
+			"where",
+			"this->tmp",
+			"tmp",
+			"this->fields",
+			"close",
+			"']",
+			"$['",
+			"'",
+			"header",
+			"pre",
+			"parse_report",
+			"Form",
+			"Fiel",
+			"Field\\Textarea",
+			"'on_create'",
+			"pre_save",
+			"[]",
+			"OtpAuthUri",
+			"',",
+			" //",
+			"Random(",
+			"Random",
+			"pnum",
+			"->",
+			"FALSE",
+			"orderby",
+			"array()",
+			"end",
+			"\\rev\\",
+			"$o",
+			"$v",
+			"{$name}",
+			"r3v",
+			"span",
+			"value",
+			".",
+			"definition",
+			"formatErrorLine",
+			"friendlyErrorType",
+			"Saveable",
+			"Instanceable",
+			"nam",
+			"$______file",
+			"NULL",
+			"///",
+			"readJsonFromFile",
+			"basepath",
+			"loadMod",
+			"login",
+			"mrg",
+			"font_title",
+			"Result",
+			"stmt_param",
+			"stmt_values",
+			"NULL",
+			"FALSE",
+			"$this->stmt->fetch",
+			"\"",
+			"	///",
+			"$r",
+			"eno",
+			"\"",
+			"single",
+			"TINYINT(1)",
+			"TINYINT",
+			" 1",
+			"tr",
+			"single",
+			"	    ",
+			"	  ",
+			" 0.",
+			"span",
+			"h2",
+			"div",
+			"6dcff6",
+			"c_llgrey",
+			"logo_border",
+			"logo_bg",
+			"c_font_color",
+			"$llgrey",
+			"$lgrey",
+			"$lblue",
+			"$grey",
+			"$blue",
+			"bgcolor",
+			"font_color",
+			"fontimp",
+			"fontcolor",
+			"fontsmono",
+			"span",
+			"mrg",
+			"ENT_SUBSTITUTE",
+			"ENT_IGNORE",
+			"CMS"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"this->cache",
+			"stmt_values",
+			"\\n\\1",
+			"\\1\\n",
+			"\\1 ",
+			"{\\n",
+			" {",
+			"",
+			"\\t",
+			", ",
+			"\\},\\n",
+			"\\{\\}",
+			"\\n\\t\\}\\n\\t",
+			"\\[\\n\\t\\{",
+			"\\},\\n\\t",
+			"\\}\\n\\t",
+			"}\\n\\t",
+			",\\n\\t",
+			"\\{\\n\\t",
+			"\\\\r3v\\\\",
+			"r3v\\",
+			";\n",
+			"\\n\\n",
+			",\\n",
+			"\"",
+			"\\n\\n",
+			", ",
+			"'",
+			"$",
+			" ",
+			"Error",
+			"pomieszczenia",
+			"param(",
+			"$this->db_param",
+			"$this->query_result",
+			"ErrorDB('",
+			"",
+			"em",
+			"\\n",
+			"\\t",
+			"\\) \\{",
+			"if (",
+			"URI",
+			"foreach (",
+			"if (",
+			" \\{",
+			"VARCHAR(45) ",
+			" ",
+			"\\n\\n",
+			" \\(\\n",
+			" INT ",
+			"\\)\\;\\n",
+			" ",
+			"\\t",
+			"findInitialState",
+			"manageInitialS",
+			"\\t",
+			"\\t *",
+			"\\t/**",
+			"        /**",
+			"$fieldskeys",
+			"    ",
+			"self::setCategory",
+			"        ",
+			";\\n",
+			"@lgrey",
+			"@blue"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "docspin/Views/Shared/_Layout.cshtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1745,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1407,
+								1407
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/Razor/Razor.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 162.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "docspin/Views/Home/Contact.cshtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1077,
+								1077
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/Razor/Razor.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "docspin/Views/Home/Index.cshtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								312,
+								312
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/Razor/Razor.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "docspin/Views/Web.config",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1122,
+								1122
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "docspin/App_Start/RouteConfig.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 519,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								360,
+								360
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close"
+							],
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "docspin/Web.config",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close"
+							],
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 686.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "docspin/Controllers/AccountController.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								307,
+								307
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close"
+							],
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "docspin/Models/DocumentACL.cs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								511,
+								511
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close"
+							],
+							"syntax": "Packages/C#/C#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/miki/.config/sublime-text-3/Packages/OmniSharp/PrebuiltOmniSharpServer/config.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8062,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2213,
+								2213
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "docspin/Web.Debug.config",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								837,
+								837
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "docspin/Properties/AssemblyInfo.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								929,
+								929
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close"
+							],
+							"syntax": "Packages/C#/C#.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "docspin/Models/AccountModels.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								226,
+								226
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close"
+							],
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "docspin.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								110,
+								110
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_indent": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 108.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.textarea":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 114.0
+	},
+	"output.variable_get":
+	{
+		"height": 205.0
+	},
+	"pinned_build_system": "Packages/Makefile/Make.sublime-build",
+	"project": "docspin.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"_ini",
+				"sys/_init.php"
+			],
+			[
+				"error",
+				"sys/rev/Errors.php"
+			],
+			[
+				"conf.",
+				"sys/rev/Conf.php"
+			],
+			[
+				"scss",
+				"mod/lib/scssphp/scss.inc.php"
+			],
+			[
+				"view",
+				"sys/rev/View.php"
+			],
+			[
+				"_bas",
+				"mod/tmx/static/res/_basic.scss"
+			],
+			[
+				"style.sc",
+				"mod/tmx/static/res/style.scss"
+			],
+			[
+				"style",
+				"mod/tmx/static/res/style.scss"
+			],
+			[
+				".scss",
+				"mod/tmx/static/res/style.scss"
+			],
+			[
+				"db",
+				"mod/tmx/main/db.sql"
+			],
+			[
+				"",
+				"mod/tmx/main/control/index.php"
+			],
+			[
+				"db.",
+				"mod/tmx/main/db.sql"
+			],
+			[
+				"sess",
+				"sys/r3v/Auth/Session.php"
+			],
+			[
+				"templa",
+				"sys/r3v/View/Template.php"
+			],
+			[
+				"vie",
+				"sys/r3v/View.php"
+			],
+			[
+				"vars",
+				"sys/r3v/Vars.php"
+			],
+			[
+				"base",
+				"sys/r3v/DB/Base.php"
+			],
+			[
+				"mod",
+				"sys/r3v/Mod.php"
+			],
+			[
+				"in",
+				"index.php"
+			],
+			[
+				"con",
+				"config.json"
+			],
+			[
+				"mod.p",
+				"sys/r3v/Mod.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/Projects/SpaceGuess/machine_learning.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 732.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

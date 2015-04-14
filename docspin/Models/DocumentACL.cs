@@ -15,9 +15,9 @@ namespace docspin.Models
     public partial class DocumentACL
     {
         public int Id { get; set; }
-        public byte ACS { get; set; }
+        public AccessControlSetting ACS { get; set; }
     
-        public virtual RepositoryDocument RepositoryDocument { get; set; }
+        public virtual Document RepositoryDocument { get; set; }
         public virtual User User { get; set; }
     }
 }

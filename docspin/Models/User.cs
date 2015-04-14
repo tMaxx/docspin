@@ -18,21 +18,22 @@ namespace docspin.Models
         {
             this.RepositorySupervisor = new HashSet<RepositorySupervisor>();
             this.DocumentVersion = new HashSet<DocumentVersion>();
-            this.Comments = new HashSet<DocumentComment>();
+            this.Comments = new HashSet<Comment>();
             this.RepositoryACL = new HashSet<RepositoryACL>();
             this.DocumentACL = new HashSet<DocumentACL>();
         }
     
         public int Id { get; set; }
+        public string UserName { get; set; }
+        public string FullName { get; set; }
         public string Active { get; set; }
-        public string Name { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public byte Role { get; set; }
     
         public virtual ICollection<RepositorySupervisor> RepositorySupervisor { get; set; }
         public virtual ICollection<DocumentVersion> DocumentVersion { get; set; }
-        public virtual ICollection<DocumentComment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<RepositoryACL> RepositoryACL { get; set; }
         public virtual ICollection<DocumentACL> DocumentACL { get; set; }
     }

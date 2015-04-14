@@ -10,17 +10,16 @@
 namespace docspin.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class DocumentVersion
+    [Flags]
+    public enum AccessControlSetting : byte
     {
-        public int Id { get; set; }
-        public System.DateTime FileTimestamp { get; set; }
-        public string Filename { get; set; }
-        public string OriginalFilename { get; set; }
-        public System.DateTime UploadTimestamp { get; set; }
-    
-        public virtual Document Document { get; set; }
-        public virtual User Author { get; set; }
+        None = 0,
+        Read = 1,
+        Comment = 2,
+        Write = 3,
+        Move = 4,
+        Archival = 5,
+        SupervisorOnly = 6
     }
 }
