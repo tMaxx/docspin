@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/13/2015 00:33:53
+-- Date Created: 04/16/2015 14:18:26
 -- Generated from EDMX file: C:\Users\Nicolas\Dropbox\Projects\docspin\docspin\Models\DataModel.edmx
 -- --------------------------------------------------
 
@@ -24,7 +24,7 @@ IF OBJECT_ID(N'[dbo].[FK_RepositoryDocumentDocumentVersion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DocumentVersionSet] DROP CONSTRAINT [FK_RepositoryDocumentDocumentVersion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_RepositoryRepositoryDocument]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[RepositoryDocumentSet] DROP CONSTRAINT [FK_RepositoryRepositoryDocument];
+    ALTER TABLE [dbo].[DocumentSet] DROP CONSTRAINT [FK_RepositoryRepositoryDocument];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UserRepositorySupervisor]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RepositorySupervisorSet] DROP CONSTRAINT [FK_UserRepositorySupervisor];
@@ -33,10 +33,10 @@ IF OBJECT_ID(N'[dbo].[FK_UserDocumentVersion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DocumentVersionSet] DROP CONSTRAINT [FK_UserDocumentVersion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_UserEntity1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DocumentCommentSet] DROP CONSTRAINT [FK_UserEntity1];
+    ALTER TABLE [dbo].[CommentSet] DROP CONSTRAINT [FK_UserEntity1];
 GO
 IF OBJECT_ID(N'[dbo].[FK_RepositoryDocumentEntity1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[DocumentCommentSet] DROP CONSTRAINT [FK_RepositoryDocumentEntity1];
+    ALTER TABLE [dbo].[CommentSet] DROP CONSTRAINT [FK_RepositoryDocumentEntity1];
 GO
 IF OBJECT_ID(N'[dbo].[FK_RepositoryRepositoryACL]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[RepositoryACLSet] DROP CONSTRAINT [FK_RepositoryRepositoryACL];
@@ -58,8 +58,8 @@ GO
 IF OBJECT_ID(N'[dbo].[RepositorySet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RepositorySet];
 GO
-IF OBJECT_ID(N'[dbo].[RepositoryDocumentSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[RepositoryDocumentSet];
+IF OBJECT_ID(N'[dbo].[DocumentSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DocumentSet];
 GO
 IF OBJECT_ID(N'[dbo].[RepositorySupervisorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RepositorySupervisorSet];
@@ -70,8 +70,8 @@ GO
 IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UserSet];
 GO
-IF OBJECT_ID(N'[dbo].[DocumentCommentSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[DocumentCommentSet];
+IF OBJECT_ID(N'[dbo].[CommentSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CommentSet];
 GO
 IF OBJECT_ID(N'[dbo].[RepositoryACLSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[RepositoryACLSet];
@@ -100,6 +100,7 @@ CREATE TABLE [dbo].[DocumentSet] (
     [TsCreated] datetime  NOT NULL,
     [TsModified] datetime  NOT NULL,
     [ACS] tinyint  NOT NULL,
+    [IsRemoved] bit  NOT NULL,
     [Repository_Id] int  NOT NULL
 );
 GO
@@ -119,6 +120,8 @@ CREATE TABLE [dbo].[DocumentVersionSet] (
     [Filename] nvarchar(max)  NOT NULL,
     [OriginalFilename] nvarchar(max)  NOT NULL,
     [UploadTimestamp] datetime  NOT NULL,
+    [IsRemoved] bit  NOT NULL,
+    [Hash] nvarchar(max)  NOT NULL,
     [Document_Id] int  NOT NULL,
     [Author_Id] int  NOT NULL
 );
@@ -127,8 +130,9 @@ GO
 -- Creating table 'UserSet'
 CREATE TABLE [dbo].[UserSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
+    [UserName] nvarchar(max)  NOT NULL,
+    [FullName] nvarchar(max)  NOT NULL,
     [Active] nvarchar(max)  NOT NULL,
-    [Name] nvarchar(max)  NOT NULL,
     [Password] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
     [Role] tinyint  NOT NULL
@@ -140,6 +144,7 @@ CREATE TABLE [dbo].[CommentSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Content] nvarchar(max)  NOT NULL,
     [Timestamp] datetime  NOT NULL,
+    [IsRemoved] bit  NOT NULL,
     [Author_Id] int  NOT NULL,
     [Document_Id] int  NOT NULL
 );

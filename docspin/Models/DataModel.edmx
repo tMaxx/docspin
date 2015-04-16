@@ -77,6 +77,7 @@
     <Property Name="TsCreated" Type="datetime" Nullable="false" />
     <Property Name="TsModified" Type="datetime" Nullable="false" />
     <Property Name="ACS" Type="tinyint" Nullable="false" />
+    <Property Name="IsRemoved" Type="bit" Nullable="false" DefaultValue="false" />
     <Property Name="Repository_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RepositorySupervisorSet">
@@ -96,6 +97,8 @@
     <Property Name="Filename" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OriginalFilename" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UploadTimestamp" Type="datetime" Nullable="false" />
+    <Property Name="IsRemoved" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="Hash" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Document_Id" Type="int" Nullable="false" />
     <Property Name="Author_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -104,8 +107,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Active" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Role" Type="tinyint" Nullable="false" />
@@ -117,6 +121,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Timestamp" Type="datetime" Nullable="false" />
+    <Property Name="IsRemoved" Type="bit" Nullable="false" DefaultValue="false" />
     <Property Name="Author_Id" Type="int" Nullable="false" />
     <Property Name="Document_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -353,6 +358,7 @@
           <NavigationProperty Name="Comments" Relationship="DataModel.RepositoryDocumentEntity1" FromRole="RepositoryDocument" ToRole="DocumentComment" />
           <NavigationProperty Name="DocumentACL" Relationship="DataModel.RepositoryDocumentDocumentACL" FromRole="RepositoryDocument" ToRole="DocumentACL" />
           <Property Name="ACS" Type="DataModel.AccessControlSetting" Nullable="false" />
+          <Property Name="IsRemoved" Type="Boolean" Nullable="false" DefaultValue="false" />
         </EntityType>
         <EntityType Name="RepositorySupervisor">
           <Key>
@@ -377,6 +383,8 @@
           <NavigationProperty Name="Author" Relationship="DataModel.UserDocumentVersion" FromRole="DocumentVersion" ToRole="User" />
           <Property Name="OriginalFilename" Type="String" Nullable="false" />
           <Property Name="UploadTimestamp" Type="DateTime" Nullable="false" />
+          <Property Name="IsRemoved" Type="Boolean" Nullable="false" DefaultValue="false" />
+          <Property Name="Hash" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="RepositoryDocumentDocumentVersion">
           <End Type="DataModel.Document" Role="RepositoryDocument" Multiplicity="1" />
@@ -420,6 +428,7 @@
           <NavigationProperty Name="Document" Relationship="DataModel.RepositoryDocumentEntity1" FromRole="DocumentComment" ToRole="RepositoryDocument" />
           <Property Name="Content" Type="String" Nullable="false" />
           <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+          <Property Name="IsRemoved" Type="Boolean" Nullable="false" DefaultValue="false" />
         </EntityType>
         <Association Name="UserEntity1">
           <End Type="DataModel.User" Role="User" Multiplicity="1" />
@@ -496,6 +505,7 @@
           <ScalarProperty Name="TsCreated" ColumnName="TsCreated" />
           <ScalarProperty Name="TsModified" ColumnName="TsModified" />
           <ScalarProperty Name="ACS" ColumnName="ACS" />
+          <ScalarProperty Name="IsRemoved" ColumnName="IsRemoved" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -514,6 +524,8 @@
           <ScalarProperty Name="Filename" ColumnName="Filename" />
           <ScalarProperty Name="OriginalFilename" ColumnName="OriginalFilename" />
           <ScalarProperty Name="UploadTimestamp" ColumnName="UploadTimestamp" />
+          <ScalarProperty Name="IsRemoved" ColumnName="IsRemoved" />
+          <ScalarProperty Name="Hash" ColumnName="Hash" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -521,6 +533,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(DataModel.User)">
         <MappingFragment StoreEntitySet="UserSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -534,6 +548,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="IsRemoved" ColumnName="IsRemoved" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -14,9 +14,15 @@ namespace docspin.Models
     
     public partial class Comment
     {
+        public Comment()
+        {
+            this.IsRemoved = false;
+        }
+    
         public int Id { get; set; }
         public string Content { get; set; }
         public System.DateTime Timestamp { get; set; }
+        public bool IsRemoved { get; set; }
     
         public virtual User Author { get; set; }
         public virtual Document Document { get; set; }
