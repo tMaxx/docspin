@@ -562,9 +562,13 @@
 	"command_palette":
 	{
 		"height": 214.0,
-		"last_filter": "menu",
+		"last_filter": "proj",
 		"selected_items":
 		[
+			[
+				"proj",
+				"Project: Close"
+			],
 			[
 				"menu",
 				"View: Toggle Menu"
