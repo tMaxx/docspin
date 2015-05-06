@@ -167,6 +167,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RepositoryController.cs" />
     <Compile Include="Models\AccessControlSetting.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -208,6 +209,7 @@
     <Compile Include="Models\RepositoryACL.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RepositoryModels.cs" />
     <Compile Include="Models\RepositorySupervisor.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -324,10 +326,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Repository\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ModelsFunctions\" />
+    <Folder Include="Views\RepositoryModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
