@@ -15,11 +15,13 @@ namespace docspin.Controllers
 {
     public class RepositoryController : Controller
     {
+        DataModelContainer db = new DataModelContainer();
+
         //
         // GET: /Repository/
         public ActionResult Index()
         {
-            return View();
+            return View(db.RepositorySet.ToList());
         }
 
         // GET
