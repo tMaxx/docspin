@@ -49,8 +49,10 @@ namespace docspin.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Name,Description,TsCreated,TsModified,ACS,IsRemoved")] Document document)
+        public ActionResult Create([Bind(Include="Id,Name,Description,ACS,IsRemoved")] Document document)
         {
+            document.TsCreated = DateTime.Now;
+            document.TsModified = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Documents.Add(document);
