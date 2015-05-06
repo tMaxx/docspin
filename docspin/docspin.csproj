@@ -343,7 +343,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="ModelsFunctions\" />
     <Folder Include="Views\DocumentModels\" />
-    <Folder Include="Views\RepositoryModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

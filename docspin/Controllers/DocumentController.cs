@@ -14,9 +14,11 @@ namespace docspin.Controllers
     {
         private DocumentContext db = new DocumentContext();
 
+
         // GET: /Document/
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
+            ViewBag.RepoId = id;
             return View(db.Documents.ToList());
         }
 
@@ -36,8 +38,9 @@ namespace docspin.Controllers
         }
 
         // GET: /Document/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+            ViewBag.RepoId = id;
             return View();
         }
 
