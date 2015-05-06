@@ -166,6 +166,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RepositoryController.cs" />
     <Compile Include="Models\AccessControlSetting.cs">
@@ -200,6 +201,7 @@
     <Compile Include="Models\DocumentACL.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DocumentModels.cs" />
     <Compile Include="Models\DocumentVersion.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -331,10 +333,16 @@
     <Content Include="Views\Repository\Delete.cshtml" />
     <Content Include="Views\Repository\Details.cshtml" />
     <Content Include="Views\Repository\Edit.cshtml" />
+    <Content Include="Views\Document\Create.cshtml" />
+    <Content Include="Views\Document\Delete.cshtml" />
+    <Content Include="Views\Document\Details.cshtml" />
+    <Content Include="Views\Document\Edit.cshtml" />
+    <Content Include="Views\Document\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ModelsFunctions\" />
+    <Folder Include="Views\DocumentModels\" />
     <Folder Include="Views\RepositoryModel\" />
   </ItemGroup>
   <ItemGroup>
