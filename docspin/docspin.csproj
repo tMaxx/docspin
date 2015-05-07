@@ -211,7 +211,6 @@
     <Compile Include="Models\RepositoryACL.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RepositoryModels.cs" />
     <Compile Include="Models\RepositorySupervisor.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -328,16 +327,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Repository\Create.cshtml" />
+    <Content Include="Views\View1.cshtml" />
     <Content Include="Views\Repository\Index.cshtml" />
-    <Content Include="Views\Repository\Delete.cshtml" />
-    <Content Include="Views\Repository\Details.cshtml" />
-    <Content Include="Views\Repository\Edit.cshtml" />
-    <Content Include="Views\Document\Create.cshtml" />
-    <Content Include="Views\Document\Delete.cshtml" />
-    <Content Include="Views\Document\Details.cshtml" />
-    <Content Include="Views\Document\Edit.cshtml" />
-    <Content Include="Views\Document\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
