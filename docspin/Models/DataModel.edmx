@@ -282,40 +282,40 @@
         <EntityContainer Name="DataModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="RepositorySet" EntityType="DataModel.Repository" />
           <EntitySet Name="DocumentSet" EntityType="DataModel.Document" />
-          <EntitySet Name="RepositorySupervisorSet" EntityType="DataModel.RepositorySupervisor" />
-          <AssociationSet Name="RepositoryRepositorSupervisor" Association="DataModel.RepositoryRepositorSupervisor">
+          <EntitySet Name="SupervisorSet" EntityType="DataModel.Supervisor" />
+          <AssociationSet Name="RepositorySupervisor" Association="DataModel.RepositorSupervisor">
             <End Role="Repository" EntitySet="RepositorySet" />
-            <End Role="RepositorSupervisor" EntitySet="RepositorySupervisorSet" />
+            <End Role="Supervisor" EntitySet="SupervisorSet" />
           </AssociationSet>
           <EntitySet Name="DocumentVersionSet" EntityType="DataModel.DocumentVersion" />
-          <AssociationSet Name="RepositoryDocumentDocumentVersion" Association="DataModel.RepositoryDocumentDocumentVersion">
-            <End Role="RepositoryDocument" EntitySet="DocumentSet" />
+          <AssociationSet Name="RepositoryDocumentVersion" Association="DataModel.RepositoryDocumentVersion">
+            <End Role="Document" EntitySet="DocumentSet" />
             <End Role="DocumentVersion" EntitySet="DocumentVersionSet" />
           </AssociationSet>
-          <AssociationSet Name="RepositoryRepositoryDocument" Association="DataModel.RepositoryRepositoryDocument">
+          <AssociationSet Name="RepositoryDocument" Association="DataModel.RepositoryDocument">
             <End Role="Repository" EntitySet="RepositorySet" />
-            <End Role="RepositoryDocument" EntitySet="DocumentSet" />
+            <End Role="Document" EntitySet="DocumentSet" />
           </AssociationSet>
           <EntitySet Name="UserSet" EntityType="DataModel.User" />
           <AssociationSet Name="UserRepositorySupervisor" Association="DataModel.UserRepositorySupervisor">
             <End Role="User" EntitySet="UserSet" />
-            <End Role="RepositorySupervisor" EntitySet="RepositorySupervisorSet" />
+            <End Role="Supervisor" EntitySet="SupervisorSet" />
           </AssociationSet>
           <AssociationSet Name="UserDocumentVersion" Association="DataModel.UserDocumentVersion">
             <End Role="User" EntitySet="UserSet" />
             <End Role="DocumentVersion" EntitySet="DocumentVersionSet" />
           </AssociationSet>
           <EntitySet Name="CommentSet" EntityType="DataModel.Comment" />
-          <AssociationSet Name="UserEntity1" Association="DataModel.UserEntity1">
+          <AssociationSet Name="UserComment" Association="DataModel.UserComment">
             <End Role="User" EntitySet="UserSet" />
             <End Role="Entity1" EntitySet="CommentSet" />
           </AssociationSet>
-          <AssociationSet Name="RepositoryDocumentEntity1" Association="DataModel.RepositoryDocumentEntity1">
-            <End Role="RepositoryDocument" EntitySet="DocumentSet" />
-            <End Role="DocumentComment" EntitySet="CommentSet" />
+          <AssociationSet Name="DocumentComment" Association="DataModel.DocumentComment">
+            <End Role="Document" EntitySet="DocumentSet" />
+            <End Role="Comment" EntitySet="CommentSet" />
           </AssociationSet>
           <EntitySet Name="RepositoryACLSet" EntityType="DataModel.RepositoryACL" />
-          <AssociationSet Name="RepositoryRepositoryACL" Association="DataModel.RepositoryRepositoryACL">
+          <AssociationSet Name="ACLRepository" Association="DataModel.ACLRepository">
             <End Role="Repository" EntitySet="RepositorySet" />
             <End Role="RepositoryACL" EntitySet="RepositoryACLSet" />
           </AssociationSet>
@@ -324,8 +324,8 @@
             <End Role="RepositoryACL" EntitySet="RepositoryACLSet" />
           </AssociationSet>
           <EntitySet Name="DocumentACLSet" EntityType="DataModel.DocumentACL" />
-          <AssociationSet Name="RepositoryDocumentDocumentACL" Association="DataModel.RepositoryDocumentDocumentACL">
-            <End Role="RepositoryDocument" EntitySet="DocumentSet" />
+          <AssociationSet Name="ACLDocument" Association="DataModel.ACLDocument">
+            <End Role="Document" EntitySet="DocumentSet" />
             <End Role="DocumentACL" EntitySet="DocumentACLSet" />
           </AssociationSet>
           <AssociationSet Name="DocumentACLUser" Association="DataModel.DocumentACLUser">
@@ -338,46 +338,46 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="RepositorySupervisor" Relationship="DataModel.RepositoryRepositorSupervisor" FromRole="Repository" ToRole="RepositorSupervisor" />
-          <NavigationProperty Name="Documents" Relationship="DataModel.RepositoryRepositoryDocument" FromRole="Repository" ToRole="RepositoryDocument" />
+          <NavigationProperty Name="Supervisor" Relationship="DataModel.RepositorSupervisor" FromRole="Repository" ToRole="Supervisor" />
+          <NavigationProperty Name="Documents" Relationship="DataModel.RepositoryDocument" FromRole="Repository" ToRole="Document" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="ACS" Type="DataModel.AccessControlSetting" Nullable="false" />
-          <NavigationProperty Name="RepositoryACL" Relationship="DataModel.RepositoryRepositoryACL" FromRole="Repository" ToRole="RepositoryACL" />
+          <NavigationProperty Name="ACL" Relationship="DataModel.ACLRepository" FromRole="Repository" ToRole="RepositoryACL" />
           </EntityType>
         <EntityType Name="Document">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="DocumentVersion" Relationship="DataModel.RepositoryDocumentDocumentVersion" FromRole="RepositoryDocument" ToRole="DocumentVersion" />
-          <NavigationProperty Name="Repository" Relationship="DataModel.RepositoryRepositoryDocument" FromRole="RepositoryDocument" ToRole="Repository" />
+          <NavigationProperty Name="Version" Relationship="DataModel.RepositoryDocumentVersion" FromRole="Document" ToRole="DocumentVersion" />
+          <NavigationProperty Name="Repository" Relationship="DataModel.RepositoryDocument" FromRole="Document" ToRole="Repository" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Description" Type="Int16" annotation:StoreGeneratedPattern="Computed" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" Nullable="true" />
           <Property Name="TsCreated" Type="DateTime" Nullable="false" />
           <Property Name="TsModified" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Comments" Relationship="DataModel.RepositoryDocumentEntity1" FromRole="RepositoryDocument" ToRole="DocumentComment" />
-          <NavigationProperty Name="DocumentACL" Relationship="DataModel.RepositoryDocumentDocumentACL" FromRole="RepositoryDocument" ToRole="DocumentACL" />
+          <NavigationProperty Name="Comments" Relationship="DataModel.DocumentComment" FromRole="Document" ToRole="Comment" />
+          <NavigationProperty Name="ACL" Relationship="DataModel.ACLDocument" FromRole="Document" ToRole="DocumentACL" />
           <Property Name="ACS" Type="DataModel.AccessControlSetting" Nullable="false" />
           <Property Name="IsRemoved" Type="Boolean" Nullable="false" DefaultValue="false" />
         </EntityType>
-        <EntityType Name="RepositorySupervisor">
+        <EntityType Name="Supervisor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Repository" Relationship="DataModel.RepositoryRepositorSupervisor" FromRole="RepositorSupervisor" ToRole="Repository" />
-          <NavigationProperty Name="User" Relationship="DataModel.UserRepositorySupervisor" FromRole="RepositorySupervisor" ToRole="User" />
+          <NavigationProperty Name="Repository" Relationship="DataModel.RepositorSupervisor" FromRole="Supervisor" ToRole="Repository" />
+          <NavigationProperty Name="User" Relationship="DataModel.UserRepositorySupervisor" FromRole="Supervisor" ToRole="User" />
         </EntityType>
-        <Association Name="RepositoryRepositorSupervisor">
+        <Association Name="RepositorSupervisor">
           <End Type="DataModel.Repository" Role="Repository" Multiplicity="1" />
-          <End Type="DataModel.RepositorySupervisor" Role="RepositorSupervisor" Multiplicity="*" />
+          <End Type="DataModel.Supervisor" Role="Supervisor" Multiplicity="*" />
         </Association>
         <EntityType Name="DocumentVersion">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Document" Relationship="DataModel.RepositoryDocumentDocumentVersion" FromRole="DocumentVersion" ToRole="RepositoryDocument" />
+          <NavigationProperty Name="Document" Relationship="DataModel.RepositoryDocumentVersion" FromRole="DocumentVersion" ToRole="Document" />
           <Property Name="FileTimestamp" Type="DateTime" Nullable="false" />
           <Property Name="Filename" Type="String" Nullable="false" />
           <NavigationProperty Name="Author" Relationship="DataModel.UserDocumentVersion" FromRole="DocumentVersion" ToRole="User" />
@@ -386,13 +386,13 @@
           <Property Name="IsRemoved" Type="Boolean" Nullable="false" DefaultValue="false" />
           <Property Name="Hash" Type="String" Nullable="false" />
         </EntityType>
-        <Association Name="RepositoryDocumentDocumentVersion">
-          <End Type="DataModel.Document" Role="RepositoryDocument" Multiplicity="1" />
+        <Association Name="RepositoryDocumentVersion">
+          <End Type="DataModel.Document" Role="Document" Multiplicity="1" />
           <End Type="DataModel.DocumentVersion" Role="DocumentVersion" Multiplicity="*" />
         </Association>
-        <Association Name="RepositoryRepositoryDocument">
+        <Association Name="RepositoryDocument">
           <End Type="DataModel.Repository" Role="Repository" Multiplicity="1" />
-          <End Type="DataModel.Document" Role="RepositoryDocument" Multiplicity="*" />
+          <End Type="DataModel.Document" Role="Document" Multiplicity="*" />
         </Association>
         <EntityType Name="User">
           <Key>
@@ -404,16 +404,16 @@
           <Property Name="Active" Type="String" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" />
           <Property Name="Email" Type="String" Nullable="false" />
-          <NavigationProperty Name="RepositorySupervisor" Relationship="DataModel.UserRepositorySupervisor" FromRole="User" ToRole="RepositorySupervisor" />
+          <NavigationProperty Name="RepositorySupervisor" Relationship="DataModel.UserRepositorySupervisor" FromRole="User" ToRole="Supervisor" />
           <NavigationProperty Name="DocumentVersion" Relationship="DataModel.UserDocumentVersion" FromRole="User" ToRole="DocumentVersion" />
-          <Property Name="Role" Type="Byte" Nullable="false" />
-          <NavigationProperty Name="Comments" Relationship="DataModel.UserEntity1" FromRole="User" ToRole="Entity1" />
+          <Property Name="Role" Type="DataModel.UserRole" Nullable="false" />
+          <NavigationProperty Name="Comments" Relationship="DataModel.UserComment" FromRole="User" ToRole="Entity1" />
           <NavigationProperty Name="RepositoryACL" Relationship="DataModel.UserRepositoryACL" FromRole="User" ToRole="RepositoryACL" />
           <NavigationProperty Name="DocumentACL" Relationship="DataModel.DocumentACLUser" FromRole="User" ToRole="DocumentACL" />
         </EntityType>
         <Association Name="UserRepositorySupervisor">
           <End Type="DataModel.User" Role="User" Multiplicity="1" />
-          <End Type="DataModel.RepositorySupervisor" Role="RepositorySupervisor" Multiplicity="*" />
+          <End Type="DataModel.Supervisor" Role="Supervisor" Multiplicity="*" />
         </Association>
         <Association Name="UserDocumentVersion">
           <End Type="DataModel.User" Role="User" Multiplicity="1" />
@@ -424,19 +424,19 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Author" Relationship="DataModel.UserEntity1" FromRole="Entity1" ToRole="User" />
-          <NavigationProperty Name="Document" Relationship="DataModel.RepositoryDocumentEntity1" FromRole="DocumentComment" ToRole="RepositoryDocument" />
+          <NavigationProperty Name="Author" Relationship="DataModel.UserComment" FromRole="Entity1" ToRole="User" />
+          <NavigationProperty Name="Document" Relationship="DataModel.DocumentComment" FromRole="Comment" ToRole="Document" />
           <Property Name="Content" Type="String" Nullable="false" />
           <Property Name="Timestamp" Type="DateTime" Nullable="false" />
           <Property Name="IsRemoved" Type="Boolean" Nullable="false" DefaultValue="false" />
         </EntityType>
-        <Association Name="UserEntity1">
+        <Association Name="UserComment">
           <End Type="DataModel.User" Role="User" Multiplicity="1" />
           <End Type="DataModel.Comment" Role="Entity1" Multiplicity="*" />
         </Association>
-        <Association Name="RepositoryDocumentEntity1">
-          <End Type="DataModel.Document" Role="RepositoryDocument" Multiplicity="1" />
-          <End Type="DataModel.Comment" Role="DocumentComment" Multiplicity="*" />
+        <Association Name="DocumentComment">
+          <End Type="DataModel.Document" Role="Document" Multiplicity="1" />
+          <End Type="DataModel.Comment" Role="Comment" Multiplicity="*" />
         </Association>
         <EntityType Name="RepositoryACL">
           <Key>
@@ -444,10 +444,10 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ACS" Type="DataModel.AccessControlSetting" Nullable="false" />
-          <NavigationProperty Name="Repository" Relationship="DataModel.RepositoryRepositoryACL" FromRole="RepositoryACL" ToRole="Repository" />
+          <NavigationProperty Name="Repository" Relationship="DataModel.ACLRepository" FromRole="RepositoryACL" ToRole="Repository" />
           <NavigationProperty Name="User" Relationship="DataModel.UserRepositoryACL" FromRole="RepositoryACL" ToRole="User" />
         </EntityType>
-        <Association Name="RepositoryRepositoryACL">
+        <Association Name="ACLRepository">
           <End Type="DataModel.Repository" Role="Repository" Multiplicity="1" />
           <End Type="DataModel.RepositoryACL" Role="RepositoryACL" Multiplicity="*" />
         </Association>
@@ -461,11 +461,11 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ACS" Type="DataModel.AccessControlSetting" Nullable="false" />
-          <NavigationProperty Name="RepositoryDocument" Relationship="DataModel.RepositoryDocumentDocumentACL" FromRole="DocumentACL" ToRole="RepositoryDocument" />
+          <NavigationProperty Name="Document" Relationship="DataModel.ACLDocument" FromRole="DocumentACL" ToRole="Document" />
           <NavigationProperty Name="User" Relationship="DataModel.DocumentACLUser" FromRole="DocumentACL" ToRole="User" />
         </EntityType>
-        <Association Name="RepositoryDocumentDocumentACL">
-          <End Type="DataModel.Document" Role="RepositoryDocument" Multiplicity="1" />
+        <Association Name="ACLDocument">
+          <End Type="DataModel.Document" Role="Document" Multiplicity="1" />
           <End Type="DataModel.DocumentACL" Role="DocumentACL" Multiplicity="*" />
         </Association>
         <Association Name="DocumentACLUser">
@@ -480,6 +480,11 @@
           <Member Name="Move" />
           <Member Name="Archival" />
           <Member Name="SupervisorOnly" />
+        </EnumType>
+        <EnumType Name="UserRole" UnderlyingType="Byte">
+          <Member Name="User" />
+          <Member Name="Moderator" />
+          <Member Name="Admin" />
         </EnumType>
       </Schema>
     </edmx:ConceptualModels>
@@ -509,8 +514,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="RepositorySupervisorSet">
-      <EntityTypeMapping TypeName="IsTypeOf(DataModel.RepositorySupervisor)">
+    <EntitySetMapping Name="SupervisorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(DataModel.Supervisor)">
         <MappingFragment StoreEntitySet="RepositorySupervisorSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
@@ -568,27 +573,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="RepositoryRepositorSupervisor" TypeName="DataModel.RepositoryRepositorSupervisor" StoreEntitySet="RepositorySupervisorSet">
+    <AssociationSetMapping Name="RepositorySupervisor" TypeName="DataModel.RepositorSupervisor" StoreEntitySet="RepositorySupervisorSet">
       <EndProperty Name="Repository">
         <ScalarProperty Name="Id" ColumnName="Repository_Id" />
       </EndProperty>
-      <EndProperty Name="RepositorSupervisor">
+      <EndProperty Name="Supervisor">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="RepositoryDocumentDocumentVersion" TypeName="DataModel.RepositoryDocumentDocumentVersion" StoreEntitySet="DocumentVersionSet">
-      <EndProperty Name="RepositoryDocument">
+    <AssociationSetMapping Name="RepositoryDocumentVersion" TypeName="DataModel.RepositoryDocumentVersion" StoreEntitySet="DocumentVersionSet">
+      <EndProperty Name="Document">
         <ScalarProperty Name="Id" ColumnName="Document_Id" />
       </EndProperty>
       <EndProperty Name="DocumentVersion">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="RepositoryRepositoryDocument" TypeName="DataModel.RepositoryRepositoryDocument" StoreEntitySet="DocumentSet">
+    <AssociationSetMapping Name="RepositoryDocument" TypeName="DataModel.RepositoryDocument" StoreEntitySet="DocumentSet">
       <EndProperty Name="Repository">
         <ScalarProperty Name="Id" ColumnName="Repository_Id" />
       </EndProperty>
-      <EndProperty Name="RepositoryDocument">
+      <EndProperty Name="Document">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
@@ -596,7 +601,7 @@
       <EndProperty Name="User">
         <ScalarProperty Name="Id" ColumnName="User_Id" />
       </EndProperty>
-      <EndProperty Name="RepositorySupervisor">
+      <EndProperty Name="Supervisor">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
@@ -608,7 +613,7 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="UserEntity1" TypeName="DataModel.UserEntity1" StoreEntitySet="CommentSet">
+    <AssociationSetMapping Name="UserComment" TypeName="DataModel.UserComment" StoreEntitySet="CommentSet">
       <EndProperty Name="User">
         <ScalarProperty Name="Id" ColumnName="Author_Id" />
       </EndProperty>
@@ -616,15 +621,15 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="RepositoryDocumentEntity1" TypeName="DataModel.RepositoryDocumentEntity1" StoreEntitySet="CommentSet">
-      <EndProperty Name="RepositoryDocument">
+    <AssociationSetMapping Name="DocumentComment" TypeName="DataModel.DocumentComment" StoreEntitySet="CommentSet">
+      <EndProperty Name="Document">
         <ScalarProperty Name="Id" ColumnName="Document_Id" />
       </EndProperty>
-      <EndProperty Name="DocumentComment">
+      <EndProperty Name="Comment">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="RepositoryRepositoryACL" TypeName="DataModel.RepositoryRepositoryACL" StoreEntitySet="RepositoryACLSet">
+    <AssociationSetMapping Name="ACLRepository" TypeName="DataModel.ACLRepository" StoreEntitySet="RepositoryACLSet">
       <EndProperty Name="Repository">
         <ScalarProperty Name="Id" ColumnName="Repository_Id" />
       </EndProperty>
@@ -640,8 +645,8 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="RepositoryDocumentDocumentACL" TypeName="DataModel.RepositoryDocumentDocumentACL" StoreEntitySet="DocumentACLSet">
-      <EndProperty Name="RepositoryDocument">
+    <AssociationSetMapping Name="ACLDocument" TypeName="DataModel.ACLDocument" StoreEntitySet="DocumentACLSet">
+      <EndProperty Name="Document">
         <ScalarProperty Name="Id" ColumnName="RepositoryDocument_Id" />
       </EndProperty>
       <EndProperty Name="DocumentACL">

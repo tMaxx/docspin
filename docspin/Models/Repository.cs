@@ -16,17 +16,17 @@ namespace docspin.Models
     {
         public Repository()
         {
-            this.RepositorySupervisor = new HashSet<RepositorySupervisor>();
+            this.Supervisor = new HashSet<Supervisor>();
             this.Documents = new HashSet<Document>();
-            this.RepositoryACL = new HashSet<RepositoryACL>();
+            this.ACL = new HashSet<RepositoryACL>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
         public AccessControlSetting ACS { get; set; }
     
-        public virtual ICollection<RepositorySupervisor> RepositorySupervisor { get; set; }
+        public virtual ICollection<Supervisor> Supervisor { get; set; }
         public virtual ICollection<Document> Documents { get; set; }
-        public virtual ICollection<RepositoryACL> RepositoryACL { get; set; }
+        public virtual ICollection<RepositoryACL> ACL { get; set; }
     }
 }

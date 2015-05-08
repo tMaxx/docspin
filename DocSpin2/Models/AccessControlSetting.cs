@@ -7,16 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace docspin.Models
+namespace DocSpin2.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class RepositorySupervisor
+    [Flags]
+    public enum AccessControlSetting : byte
     {
-        public int Id { get; set; }
-    
-        public virtual Repository Repository { get; set; }
-        public virtual User User { get; set; }
+        None = 0,
+        Read = 1,
+        Comment = 2,
+        Write = 3,
+        Move = 4,
+        Archival = 5,
+        SupervisorOnly = 6
     }
 }

@@ -18,6 +18,7 @@ namespace docspin.Controllers
         // GET: /Repository/
         public ActionResult Index()
         {
+			//db.RepositorySet.
             return View(db.RepositorySet.ToList());
         }
 

@@ -18,11 +18,17 @@ namespace docspin
 		{
 			AreaRegistration.RegisterAllAreas();
 
+			using (var context = new docspin.Models.DataModelContainer())
+			{
+				context.Database.Initialize(false);
+			}
+
+			TheAuthConfig.Initialize();
 			WebApiConfig.Register(GlobalConfiguration.Configuration);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
-			AuthConfig.RegisterAuth();
+			//AuthConfig.RegisterAuth();
 		}
 	}
 }

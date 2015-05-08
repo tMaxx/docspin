@@ -17,9 +17,9 @@ namespace docspin.Models
         public Document()
         {
             this.IsRemoved = false;
-            this.DocumentVersion = new HashSet<DocumentVersion>();
+            this.Version = new HashSet<DocumentVersion>();
             this.Comments = new HashSet<Comment>();
-            this.DocumentACL = new HashSet<DocumentACL>();
+            this.ACL = new HashSet<DocumentACL>();
         }
     
         public int Id { get; set; }
@@ -30,9 +30,9 @@ namespace docspin.Models
         public AccessControlSetting ACS { get; set; }
         public bool IsRemoved { get; set; }
     
-        public virtual ICollection<DocumentVersion> DocumentVersion { get; set; }
+        public virtual ICollection<DocumentVersion> Version { get; set; }
         public virtual Repository Repository { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-        public virtual ICollection<DocumentACL> DocumentACL { get; set; }
+        public virtual ICollection<DocumentACL> ACL { get; set; }
     }
 }

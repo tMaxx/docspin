@@ -17,7 +17,7 @@ namespace docspin.Models
         public int Id { get; set; }
         public AccessControlSetting ACS { get; set; }
     
-        public virtual Document RepositoryDocument { get; set; }
+        public virtual Document Document { get; set; }
         public virtual User User { get; set; }
     }
 }

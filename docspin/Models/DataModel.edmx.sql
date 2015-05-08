@@ -2,14 +2,14 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/16/2015 14:18:26
--- Generated from EDMX file: C:\Users\Nicolas\Dropbox\Projects\docspin\docspin\Models\DataModel.edmx
+-- Date Created: 05/07/2015 14:06:00
+-- Generated from EDMX file: C:\Users\Nicolas\OneDrive\Projects\docspin\docspin\Models\DataModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [aspnet-docspin];
-GO
+--USE [aspnet-docspin];
+--GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
 
