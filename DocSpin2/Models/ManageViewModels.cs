@@ -2,9 +2,12 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace DocSpin2.Models
 {
+	[NotMapped]
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }
@@ -14,17 +17,20 @@ namespace DocSpin2.Models
         public bool BrowserRemembered { get; set; }
     }
 
+	[NotMapped]
     public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
         public IList<AuthenticationDescription> OtherLogins { get; set; }
     }
 
+	[NotMapped]
     public class FactorViewModel
     {
         public string Purpose { get; set; }
     }
 
+	[NotMapped]
     public class SetPasswordViewModel
     {
         [Required]
@@ -39,6 +45,7 @@ namespace DocSpin2.Models
         public string ConfirmPassword { get; set; }
     }
 
+	[NotMapped]
     public class ChangePasswordViewModel
     {
         [Required]
@@ -58,6 +65,7 @@ namespace DocSpin2.Models
         public string ConfirmPassword { get; set; }
     }
 
+	[NotMapped]
     public class AddPhoneNumberViewModel
     {
         [Required]
@@ -66,6 +74,7 @@ namespace DocSpin2.Models
         public string Number { get; set; }
     }
 
+	[NotMapped]
     public class VerifyPhoneNumberViewModel
     {
         [Required]
@@ -78,6 +87,7 @@ namespace DocSpin2.Models
         public string PhoneNumber { get; set; }
     }
 
+	[NotMapped]
     public class ConfigureTwoFactorViewModel
     {
         public string SelectedProvider { get; set; }

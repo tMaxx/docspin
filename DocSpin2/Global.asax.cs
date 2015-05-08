@@ -12,7 +12,7 @@ namespace DocSpin2
     {
         protected void Application_Start()
         {
-			using (var context = new DocSpin2.Models.DataModelContainer())
+			using (var context = new DocSpin2.Models.DocSpinContext())
 			{
 				context.Database.Initialize(false);
 			}

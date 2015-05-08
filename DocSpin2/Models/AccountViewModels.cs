@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace DocSpin2.Models
 {
+	[NotMapped]
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
@@ -10,11 +13,13 @@ namespace DocSpin2.Models
         public string Email { get; set; }
     }
 
+	[NotMapped]
     public class ExternalLoginListViewModel
     {
         public string ReturnUrl { get; set; }
     }
 
+	[NotMapped]
     public class SendCodeViewModel
     {
         public string SelectedProvider { get; set; }
@@ -23,6 +28,7 @@ namespace DocSpin2.Models
         public bool RememberMe { get; set; }
     }
 
+	[NotMapped]
     public class VerifyCodeViewModel
     {
         [Required]
@@ -39,6 +45,7 @@ namespace DocSpin2.Models
         public bool RememberMe { get; set; }
     }
 
+	[NotMapped]
     public class ForgotViewModel
     {
         [Required]
@@ -46,6 +53,7 @@ namespace DocSpin2.Models
         public string Email { get; set; }
     }
 
+	[NotMapped]
     public class LoginViewModel
     {
         [Required]
@@ -62,6 +70,7 @@ namespace DocSpin2.Models
         public bool RememberMe { get; set; }
     }
 
+	[NotMapped]
     public class RegisterViewModel
     {
         [Required]
@@ -81,6 +90,7 @@ namespace DocSpin2.Models
         public string ConfirmPassword { get; set; }
     }
 
+	[NotMapped]
     public class ResetPasswordViewModel
     {
         [Required]
@@ -102,6 +112,7 @@ namespace DocSpin2.Models
         public string Code { get; set; }
     }
 
+	[NotMapped]
     public class ForgotPasswordViewModel
     {
         [Required]
