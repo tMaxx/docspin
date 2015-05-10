@@ -8,10 +8,7 @@ namespace DocSpin2.Models
 {
 	public partial class DocSpinContext : ApplicationDbContext
     {
-		public DocSpinContext()
-			: base()
-		{
-		}
+		public DocSpinContext() : base() { }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

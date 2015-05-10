@@ -23,7 +23,7 @@ namespace DocSpin2.Models
 	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-			: base()
+			: base("DefaultConnection")
         {
         }
 
