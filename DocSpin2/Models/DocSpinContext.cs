@@ -8,6 +8,15 @@ namespace DocSpin2.Models
 {
 	public partial class DocSpinContext : ApplicationDbContext
     {
+		public static void InitializeDBContext()
+		{
+			using (var context = new DocSpin2.Models.DocSpinContext())
+			{
+				context.Database.Initialize(false);
+			}
+		}
+
+
 		public DocSpinContext() : base() { }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
