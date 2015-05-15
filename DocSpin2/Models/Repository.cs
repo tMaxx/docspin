@@ -15,6 +15,7 @@ namespace DocSpin2.Models
     
         public int Id { get; set; }
         public string Name { get; set; }
+		public string Description { get; set; }
         public AccessControlSetting ACS { get; set; }
     
         public virtual ICollection<Supervisor> Supervisor { get; set; }

@@ -25,7 +25,7 @@ namespace DocSpin2.Models
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<short> Description { get; set; }
+        public string Description { get; set; }
         public System.DateTime TsCreated { get; set; }
         public System.DateTime TsModified { get; set; }
         public AccessControlSetting ACS { get; set; }

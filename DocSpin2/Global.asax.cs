@@ -13,7 +13,7 @@ namespace DocSpin2
     {
         protected void Application_Start()
         {
-			DocSpinContext.InitializeDBContext();
+			ApplicationDbContext.InitializeDBContext();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

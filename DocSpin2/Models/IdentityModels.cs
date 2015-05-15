@@ -36,5 +36,24 @@ namespace DocSpin2.Models
         {
             return new ApplicationDbContext();
         }
+
+		public static void InitializeDBContext()
+		{
+			using (var context = Create())
+			{
+				context.Database.Initialize(false);
+			}
+		}
+
+		public virtual IDbSet<Repository> RepositorySet { get; set; }
+		public virtual IDbSet<Document> DocumentSet { get; set; }
+		public virtual IDbSet<Supervisor> SupervisorSet { get; set; }
+		public virtual IDbSet<DocumentVersion> DocumentVersionSet { get; set; }
+		public virtual IDbSet<Comment> CommentSet { get; set; }
+		public virtual IDbSet<RepositoryACL> RepositoryACLSet { get; set; }
+		public virtual IDbSet<DocumentACL> DocumentACLSet { get; set; }
+
+		public System.Data.Entity.DbSet<DocSpin2.Models.Repository> Repositories { get; set; }
+		//public virtual DbSet<ApplicationUser> ApplicationUserSet { get; set; }
     }
 }
