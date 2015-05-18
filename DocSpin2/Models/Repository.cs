@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
     
 
 namespace DocSpin2.Models
@@ -8,12 +9,14 @@ namespace DocSpin2.Models
     {
         public Repository()
         {
-            this.Supervisor = new HashSet<Supervisor>();
+			this.ACS = new AccessControlSetting();
+			this.Supervisor = new HashSet<Supervisor>();
             this.Documents = new HashSet<Document>();
             this.ACL = new HashSet<RepositoryACL>();
         }
-    
+
         public int Id { get; set; }
+		[Required]
         public string Name { get; set; }
 		public string Description { get; set; }
         public AccessControlSetting ACS { get; set; }

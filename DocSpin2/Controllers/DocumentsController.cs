@@ -46,7 +46,7 @@ namespace DocSpin2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description,TsCreated,TsModified,ACS,IsRemoved")] Document document)
+        public ActionResult Create([Bind(Include = "Name,Description,ACS")] Document document)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace DocSpin2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,TsCreated,TsModified,ACS,IsRemoved")] Document document)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS,IsRemoved")] Document document)
         {
             if (ModelState.IsValid)
             {

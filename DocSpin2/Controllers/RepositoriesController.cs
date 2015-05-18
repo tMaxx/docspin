@@ -17,7 +17,7 @@ namespace DocSpin2.Controllers
         // GET: Repositories
         public ActionResult Index()
         {
-            return View(db.Repositories.ToList());
+            return View(db.RepositorySet.ToList());
         }
 
         // GET: Repositories/Details/5
@@ -27,7 +27,7 @@ namespace DocSpin2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Repository repository = db.Repositories.Find(id);
+            Repository repository = db.RepositorySet.Find(id);
             if (repository == null)
             {
                 return HttpNotFound();
@@ -50,7 +50,7 @@ namespace DocSpin2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Repositories.Add(repository);
+                db.RepositorySet.Add(repository);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace DocSpin2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Repository repository = db.Repositories.Find(id);
+            Repository repository = db.RepositorySet.Find(id);
             if (repository == null)
             {
                 return HttpNotFound();
@@ -96,7 +96,7 @@ namespace DocSpin2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Repository repository = db.Repositories.Find(id);
+            Repository repository = db.RepositorySet.Find(id);
             if (repository == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Repository repository = db.Repositories.Find(id);
-            db.Repositories.Remove(repository);
+            Repository repository = db.RepositorySet.Find(id);
+            db.RepositorySet.Remove(repository);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

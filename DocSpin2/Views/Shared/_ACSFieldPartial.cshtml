@@ -1,0 +1,16 @@
+﻿@model DocSpin2.Models.AccessControlSetting?
+@using DocSpin2.Models
+
+<div class="form-group">
+	<div class="col-md-10">
+		@Html.LabelForModel(htmlAttributes: new { @class = "control-label col-md-2" });
+
+		<div class="input-group">
+			@foreach (AccessControlSetting acs in Enum.GetValues(typeof(AccessControlSetting)))
+			{
+				<input type="checkbox" name="ACS" value="@((int)acs)" @((Model != null && ((AccessControlSetting)Model).HasFlag(acs)) ? "checked='checked'" : "") />
+				@Enum.GetName(typeof(AccessControlSetting), (int)acs)
+			}
+		</div>
+	</div>
+</div>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
     
 
 namespace DocSpin2.Models
@@ -13,14 +14,22 @@ namespace DocSpin2.Models
         }
     
         public int Id { get; set; }
-        public System.DateTime FileTimestamp { get; set; }
-        public string Filename { get; set; }
-        public string OriginalFilename { get; set; }
-        public System.DateTime UploadTimestamp { get; set; }
-        public bool IsRemoved { get; set; }
-        public string Hash { get; set; }
+		[Required]
+		public System.DateTime FileTimestamp { get; set; }
+		[Required]
+		public string Filename { get; set; }
+		[Required]
+		public string OriginalFilename { get; set; }
+		[Required]
+		public System.DateTime UploadTimestamp { get; set; }
+		[Required]
+		public bool IsRemoved { get; set; }
+		[Required]
+		public string Hash { get; set; }
     
+		[Required]
         public virtual Document Document { get; set; }
+		[Required]
         public virtual ApplicationUser Author { get; set; }
     }
 }

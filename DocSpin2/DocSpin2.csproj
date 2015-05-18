@@ -168,6 +168,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505171226426_AnnotationsRevamp.cs" />
+    <Compile Include="Migrations\201505171226426_AnnotationsRevamp.Designer.cs">
+      <DependentUpon>201505171226426_AnnotationsRevamp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccessControlSetting.cs">
       <SubType>Code</SubType>
@@ -179,11 +183,6 @@
     <Compile Include="Models\Comment.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\DocSpinContext.cs">
-      <SubType>Code</SubType>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="Models\Document.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -193,7 +192,8 @@
     <Compile Include="Models\DocumentVersion.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\EntityEvents.cs" />
+    <Compile Include="Models\ApplicationContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Repository.cs">
       <SubType>Code</SubType>
@@ -278,6 +278,7 @@
     <Content Include="Views\Repositories\Details.cshtml" />
     <Content Include="Views\Repositories\Edit.cshtml" />
     <Content Include="Views\Repositories\Index.cshtml" />
+    <Content Include="Views\Shared\_ACSFieldPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +292,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505171226426_AnnotationsRevamp.resx">
+      <DependentUpon>201505171226426_AnnotationsRevamp.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
