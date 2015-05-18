@@ -38,7 +38,7 @@ namespace DocSpin2.Models
 			foreach (string v in vals)
 			{
 				try	{ temp = byte.Parse(v);	}
-				catch (Exception e) { continue; }
+				catch (Exception) { continue; }
 				ret |= (AccessControlSetting)temp;
 			}
 			return ret;
