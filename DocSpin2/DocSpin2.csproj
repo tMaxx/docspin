@@ -209,6 +209,7 @@
     <Compile Include="Models\Supervisor.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Upload.cs" />
     <Compile Include="Models\UserRole.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -295,9 +296,12 @@
     <Content Include="Views\Repositories\Edit.cshtml" />
     <Content Include="Views\Repositories\Index.cshtml" />
     <Content Include="Views\Shared\_ACSFieldPartial.cshtml" />
+    <Content Include="Views\Documents\FileUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\files\" />
+    <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

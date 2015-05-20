@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DocSpin2.Models;
+using System.IO;
 
 namespace DocSpin2.Controllers
 {
@@ -46,7 +47,7 @@ namespace DocSpin2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Description,ACS")] Document document)
+        public ActionResult Create([Bind(Include = "Name,Description,ACS,IsRemoved")] Document document)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace DocSpin2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS,IsRemoved")] Document document)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Document document)
         {
             if (ModelState.IsValid)
             {
@@ -122,6 +123,27 @@ namespace DocSpin2.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult FileUpload()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult FileUpload(Upload upload)
+        {
+            foreach (var file in upload.Files)
+            {
+                if (file.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(file.FileName);
+                    var path = Path.Combine(Server.MapPath("~/Content/files"), fileName);
+                    file.SaveAs(path);
+                }
+            }
+
+            return RedirectToAction("FileUpload");
         }
     }
 }
