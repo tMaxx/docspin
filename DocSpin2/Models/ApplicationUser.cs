@@ -3,8 +3,13 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Microsoft.Owin;
 
 
 namespace DocSpin2.Models
@@ -29,7 +34,11 @@ namespace DocSpin2.Models
 			this.Role = UserRole.User;
         }
     
+		[Key]
         public override string Id { get; set; }
+		//[Index]
+		//[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		//public int UserId { get; set; }
 		[Required]
 		public string FullName { get; set; }
         public UserRole Role { get; set; }
@@ -39,5 +48,28 @@ namespace DocSpin2.Models
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<RepositoryACL> RepositoryACL { get; set; }
         public virtual ICollection<DocumentACL> DocumentACL { get; set; }
+
+
+		private static UserRole? _curUserRole = null;
+		public static UserRole currentUserRole
+		{
+			get
+			{
+				if (_curUserRole == null)
+				{
+					var usr = HttpContext.Current
+						.GetOwinContext()
+						.Get<ApplicationSignInManager>()
+						.UserManager.FindById(
+						HttpContext.Current.User.Identity.GetUserId()
+						);
+					if (usr == null)
+						_curUserRole = UserRole.None;
+					else
+						_curUserRole = usr.Role;
+				}
+				return (UserRole)_curUserRole;
+			}
+		}
     }
 }

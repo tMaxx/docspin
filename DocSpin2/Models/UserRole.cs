@@ -7,6 +7,7 @@ namespace DocSpin2.Models
     {
         User = 0,
         Moderator = 1,
-        Admin = 2
+        Admin = 2,
+		None = 8
     }
 }

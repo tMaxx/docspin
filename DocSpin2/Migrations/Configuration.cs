@@ -10,6 +10,9 @@ namespace DocSpin2.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+#if DEBUG
+			AutomaticMigrationDataLossAllowed = true;
+#endif
         }
 
         protected override void Seed(DocSpin2.Models.ApplicationDbContext context)

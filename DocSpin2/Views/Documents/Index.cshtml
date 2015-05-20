@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DocSpin2.Models.Document>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Documents in " + Model.Single().Repository.Name;
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")

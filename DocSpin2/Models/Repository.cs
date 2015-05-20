@@ -15,10 +15,12 @@ namespace DocSpin2.Models
             this.ACL = new HashSet<RepositoryACL>();
         }
 
+		[Key]
         public int Id { get; set; }
 		[Required]
         public string Name { get; set; }
 		public string Description { get; set; }
+		[Required]
         public AccessControlSetting ACS { get; set; }
     
         public virtual ICollection<Supervisor> Supervisor { get; set; }

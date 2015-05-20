@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -23,7 +25,32 @@ namespace DocSpin2.Models
 
 	public class AccessControlSettingHelper
 	{
-		//public static 
+		public static string DescribeSingle(uint a)
+		{
+			if ((a & 32u) == 32u)
+				return "Supervisors only";
+			return Enum.GetName(typeof(AccessControlSetting), a);
+		}
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public static string DescribeSingle(AccessControlSetting a)
+		{
+			return DescribeSingle((uint)a);
+		}
+
+		public static string Describe(AccessControlSetting a)
+		{
+			StringBuilder ret = new StringBuilder();
+
+			for (uint i = 32; i > 0; i >>= 1)
+				if (((uint)a & i) == i)
+				{
+					ret.Append(DescribeSingle((AccessControlSetting)i));
+					ret.Append(", ");
+				}
+
+			return ret.ToString(0, ret.Length - 2);
+		}
 	}
 
 	public class AccessControlSettingBinder : IModelBinder
