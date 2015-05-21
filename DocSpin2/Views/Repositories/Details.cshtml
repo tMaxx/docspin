@@ -40,3 +40,84 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Created
+        </th>
+        <th>
+            Modified
+        </th>
+        <th>
+            ACS
+        </th>
+        <th>
+            Removed
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Documents)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TsCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TsModified)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ACS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRemoved)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            @Html.ActionLink("Nowy dokument", "Index", "Repositories", null, null)
+        </td>
+        <td>
+            Lorem Ipsum
+        </td>
+        <td>
+            21.06.2015
+        </td>
+        <td>
+            21.06.2015
+        </td>
+        <td>
+            Edit
+        </td>
+        <td>
+            0
+        </td>
+        <td>
+        </td>
+    </tr>
+
+</table>

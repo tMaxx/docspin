@@ -27,11 +27,12 @@ namespace DocSpin2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Repository repository = db.RepositorySet.Find(id);
+            Repository repository = db.RepositorySet.Where(r => r.Id == id).Include(d => d.Documents).First();
             if (repository == null)
             {
                 return HttpNotFound();
             }
+
             return View(repository);
         }
 
