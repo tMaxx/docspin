@@ -26,10 +26,13 @@ namespace DocSpin2.Models
 		public bool IsRemoved { get; set; }
 		[Required]
 		public string Hash { get; set; }
+		[Required]
+		public int DocumentId { get; set; }
+		[Required]
+		public string AuthorId { get; set; }
+
     
-		[Required]
         public virtual Document Document { get; set; }
-		[Required]
         public virtual ApplicationUser Author { get; set; }
     }
 }

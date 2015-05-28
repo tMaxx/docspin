@@ -1,5 +1,6 @@
 ﻿@model DocSpin2.Models.Document
 @using DocSpin2.Models
+@using System.Web.Mvc.Html
 
 @{
     ViewBag.Title = "Create";
@@ -34,15 +35,28 @@
 
 		@Html.Partial("_ACSFieldPartial", Model == null ? new AccessControlSetting() : Model.ACS)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsRemoved, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsRemoved)
-                    @Html.ValidationMessageFor(model => model.IsRemoved, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+		<div class="form-group">
+			@Html.LabelFor(model => model.RepositoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<div class="select">
+					@Html.DropDownListFor(model => Model.RepositoryId, ViewData["RepositoryList"] as SelectList)
+					@Html.ValidationMessageFor(model => model.RepositoryId, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+
+		@if (ApplicationUser.CurrentUserRole == UserRole.Admin)
+		{ 
+			<div class="form-group">
+				@Html.LabelFor(model => model.IsRemoved, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					<div class="checkbox">
+						@Html.EditorFor(model => model.IsRemoved)
+						@Html.ValidationMessageFor(model => model.IsRemoved, "", new { @class = "text-danger" })
+					</div>
+				</div>
+			</div>
+		}
 
         <div class="form-group">
             <div class="col-md-8">

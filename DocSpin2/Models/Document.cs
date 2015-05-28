@@ -28,9 +28,10 @@ namespace DocSpin2.Models
         public AccessControlSetting ACS { get; set; }
 		[Required]
 		public bool IsRemoved { get; set; }
+		[Required]
+		public int RepositoryId { get; set; }
     
         public virtual ICollection<DocumentVersion> Versions { get; set; }
-		[Required]
         public virtual Repository Repository { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<DocumentACL> ACL { get; set; }

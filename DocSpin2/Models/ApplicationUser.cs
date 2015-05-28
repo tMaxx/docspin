@@ -41,6 +41,7 @@ namespace DocSpin2.Models
 		//public int UserId { get; set; }
 		[Required]
 		public string FullName { get; set; }
+		[Required]
         public UserRole Role { get; set; }
     
         public virtual ICollection<Supervisor> RepositorySupervisor { get; set; }
@@ -49,13 +50,18 @@ namespace DocSpin2.Models
         public virtual ICollection<RepositoryACL> RepositoryACL { get; set; }
         public virtual ICollection<DocumentACL> DocumentACL { get; set; }
 
-
-		private static UserRole? _curUserRole = null;
-		public static UserRole currentUserRole
+		[NotMapped]
+		private static bool _curUserObjInited = false;
+		[NotMapped]
+		private static ApplicationUser _curUserObj = null;
+		[NotMapped]
+		private static UserRole _curUserRole = UserRole.None;
+		public static ApplicationUser CurrentUser
 		{
 			get
 			{
-				if (_curUserRole == null)
+				//slight abuse ahead
+				if (!_curUserObjInited)
 				{
 					var usr = HttpContext.Current
 						.GetOwinContext()
@@ -63,12 +69,33 @@ namespace DocSpin2.Models
 						.UserManager.FindById(
 						HttpContext.Current.User.Identity.GetUserId()
 						);
-					if (usr == null)
-						_curUserRole = UserRole.None;
-					else
+					_curUserObj = usr;
+					if (_curUserObj != null)
 						_curUserRole = usr.Role;
+					_curUserObjInited = true;
 				}
+				return _curUserObj;
+			}
+		}
+
+		public static UserRole CurrentUserRole
+		{
+			get
+			{
+				if (!_curUserObjInited && CurrentUser == null)
+					return UserRole.None;
 				return (UserRole)_curUserRole;
+			}
+		}
+
+		public static string CurrentUserId
+		{
+			get
+			{
+				if ((!_curUserObjInited && CurrentUser == null)
+					|| (_curUserObj == null))
+					return "not logged in";
+				return _curUserObj.Id;
 			}
 		}
     }

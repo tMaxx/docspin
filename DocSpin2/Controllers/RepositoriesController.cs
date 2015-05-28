@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DocSpin2.Models;
+using DocSpin2.Util;
 
 namespace DocSpin2.Controllers
 {
@@ -17,7 +18,7 @@ namespace DocSpin2.Controllers
         // GET: Repositories
         public ActionResult Index()
         {
-            return View(db.RepositorySet.ToList());
+            return View(Repository.GetRepositoriesList());
         }
 
         // GET: Repositories/Details/5
@@ -33,13 +34,18 @@ namespace DocSpin2.Controllers
                 return HttpNotFound();
             }
 
+			if (!ObjectAuth.RepositoryAction(id, AccessControlSetting.Read))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
             return View(repository);
         }
 
         // GET: Repositories/Create
         public ActionResult Create()
         {
-            return View();
+			if (ApplicationUser.CurrentUserRole != UserRole.Admin)
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);			
+			return View();
         }
 
         // POST: Repositories/Create
@@ -49,7 +55,10 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description,ACS")] Repository repository)
         {
-            if (ModelState.IsValid)
+			if (ApplicationUser.CurrentUserRole != UserRole.Admin)
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);				
+
+			if (ModelState.IsValid)
             {
                 db.RepositorySet.Add(repository);
                 db.SaveChanges();
@@ -71,17 +80,22 @@ namespace DocSpin2.Controllers
             {
                 return HttpNotFound();
             }
-            return View(repository);
+
+			if (!ObjectAuth.RepositoryAction(id, AccessControlSetting.Write))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
+			return View(repository);
         }
 
         // POST: Repositories/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Repository repository)
         {
-            if (ModelState.IsValid)
+			if (!ObjectAuth.RepositoryAction(id, AccessControlSetting.Write))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			
+			if (ModelState.IsValid)
             {
                 db.Entry(repository).State = EntityState.Modified;
                 db.SaveChanges();
@@ -93,7 +107,10 @@ namespace DocSpin2.Controllers
         // GET: Repositories/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+			if (ApplicationUser.CurrentUserRole != UserRole.Admin)
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			
+			if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -110,7 +127,10 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Repository repository = db.RepositorySet.Find(id);
+			if (ApplicationUser.CurrentUserRole != UserRole.Admin)
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			
+			Repository repository = db.RepositorySet.Find(id);
             db.RepositorySet.Remove(repository);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -14,15 +14,16 @@ namespace DocSpin2.Models
     {
         None = 0,
         Read = 1,
-        Comment = 2,
-        Write = 4,
-        Move = 8,
+        Comment = 3,
+        Write = 7,
+		//Move = 8,
 		//[Display(Name = "Archived")]
-        Archival = 16,
+		//Archival = 16,
 		[Display(Name = "Supervisors only")]
         SupervisorOnly = 32
     }
 
+	
 	public class AccessControlSettingHelper
 	{
 		public static string DescribeSingle(uint a)
@@ -51,7 +52,25 @@ namespace DocSpin2.Models
 
 			return ret.ToString(0, ret.Length - 2);
 		}
+
+		//weakly check if action can be performed
+		public static bool Compare(AccessControlSetting against, AccessControlSetting action)
+		{
+			//is a supervisor of some sort
+			if (action.HasFlag(AccessControlSetting.SupervisorOnly))
+				return true;
+			against &= action;
+			//supervisor should be checked beforehand
+			if (against.HasFlag(AccessControlSetting.SupervisorOnly))
+				return false;
+			//filter values
+			return against == action;
+		}
+
+		public static bool Compare(AccessControlSetting against, AccessControlSetting action, bool isSuper)
+		{ return Compare(against, (isSuper ? action |= AccessControlSetting.SupervisorOnly : action)); }
 	}
+
 
 	public class AccessControlSettingBinder : IModelBinder
 	{

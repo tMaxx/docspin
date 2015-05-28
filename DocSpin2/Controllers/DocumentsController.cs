@@ -7,10 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DocSpin2.Models;
+using DocSpin2.Util;
 using System.IO;
+using System.Collections.Specialized;
 
 namespace DocSpin2.Controllers
 {
+	[Authorize]
     public class DocumentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,7 +21,9 @@ namespace DocSpin2.Controllers
         // GET: Documents
         public ActionResult Index()
         {
-            return View(db.DocumentSet.ToList());
+			if (ApplicationUser.CurrentUserRole == UserRole.Admin)
+	            return View(db.DocumentSet.ToList());
+			return View("Index", "Home");
         }
 
         // GET: Documents/Details/5
@@ -33,23 +38,37 @@ namespace DocSpin2.Controllers
             {
                 return HttpNotFound();
             }
-            return View(document);
+			
+			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Read))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			
+			return View(document);
         }
 
         // GET: Documents/Create
         public ActionResult Create()
         {
-            return View();
+			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
+			ViewData["RepositoryList"] =
+				new SelectList(Repository.GetRepositoriesList(), "Id", "Name");
+			
+			return View();
         }
 
         // POST: Documents/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Description,ACS,IsRemoved")] Document document)
+        public ActionResult Create([Bind(Include = "Name,Description,ACS,RepositoryId")] Document document)
         {
-            if (ModelState.IsValid)
+			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
+			ViewData["RepositoryList"] =
+				new SelectList(Repository.GetRepositoriesList(), "Id", "Name");
+
+			if (ModelState.IsValid)
             {
                 db.DocumentSet.Add(document);
                 db.SaveChanges();
@@ -71,16 +90,21 @@ namespace DocSpin2.Controllers
             {
                 return HttpNotFound();
             }
+
+			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Read))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
             return View(document);
         }
 
         // POST: Documents/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Document document)
         {
+			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
             if (ModelState.IsValid)
             {
                 db.Entry(document).State = EntityState.Modified;
@@ -92,7 +116,7 @@ namespace DocSpin2.Controllers
 
         // GET: Documents/Delete/5
         public ActionResult Delete(int? id)
-        {
+		{
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -102,7 +126,11 @@ namespace DocSpin2.Controllers
             {
                 return HttpNotFound();
             }
-            return View(document);
+
+			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+            
+			return View(document);
         }
 
         // POST: Documents/Delete/5
@@ -110,9 +138,18 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
             Document document = db.DocumentSet.Find(id);
-            db.DocumentSet.Remove(document);
-            db.SaveChanges();
+			if (ApplicationUser.CurrentUserRole != UserRole.Admin)
+			{
+				document.IsRemoved = true;
+				db.Entry(document).State = EntityState.Modified;
+			}
+			else
+				db.DocumentSet.Remove(document);
+	        db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -138,7 +175,7 @@ namespace DocSpin2.Controllers
                 if (file.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(file.FileName);
-                    var path = Path.Combine(Server.MapPath("~/Content/files"), fileName);
+                    var path = Path.Combine(Util.FileManager.FileFolder, fileName);
                     file.SaveAs(path);
                 }
             }

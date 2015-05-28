@@ -10,6 +10,10 @@ namespace DocSpin2.Models
         public int Id { get; set; }
 		[Required]
         public AccessControlSetting ACS { get; set; }
+		[Required]
+		public int DocumentId { get; set; }
+		[Required]
+		public string UserId { get; set; }
     
         public virtual Document Document { get; set; }
         public virtual ApplicationUser User { get; set; }

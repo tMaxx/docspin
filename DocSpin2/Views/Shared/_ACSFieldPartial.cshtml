@@ -2,15 +2,18 @@
 @using DocSpin2.Models
 
 <div class="form-group">
-	<div class="col-md-10">
-		@Html.LabelForModel("Access for item",htmlAttributes: new { @class = "control-label col-md-2" });
-
-		<div class="input-group">
-			@foreach (AccessControlSetting acs in Enum.GetValues(typeof(AccessControlSetting)))
-			{
-				<input type="checkbox" name="ACS" value="@((int)acs)" @((Model != null && ((AccessControlSetting)Model).HasFlag(acs)) ? "checked='checked'" : "") />
+	@Html.LabelForModel("Access for item", htmlAttributes: new { @class = "control-label col-md-2" })
+	<div class="col-lg-5">
+		@foreach (AccessControlSetting acs in Enum.GetValues(typeof(AccessControlSetting)))
+		{
+			<div class="input-group-sm @(acs == AccessControlSetting.SupervisorOnly ? "col-xs-6" : "col-xs-4")">
+				<div class="input-group-addon col-xs-1">
+					@Html.CheckBox("ACS", (Model != null && ((AccessControlSetting)Model).HasFlag(acs)), new { @value = (int)acs })
+				</div>
+				<div class="input-group-addon">
 					@Html.Raw(AccessControlSettingHelper.DescribeSingle(acs))
-			}
-		</div>
+				</div>
+			</div>
+		}
 	</div>
 </div>

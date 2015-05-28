@@ -20,10 +20,12 @@ namespace DocSpin2.Models
 		public System.DateTime Timestamp { get; set; }
 		[Required]
 		public bool IsRemoved { get; set; }
+		[Required]
+		public int DocumentId { get; set; }
+		[Required]
+		public string AuthorId { get; set; }
 
-		[Required]
 		public virtual ApplicationUser Author { get; set; }
-		[Required]
 		public virtual Document Document { get; set; }
     }
 }
