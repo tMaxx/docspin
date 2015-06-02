@@ -28,7 +28,7 @@ namespace DocSpin2.Util
 					return true;
 
 				RepositoryACL fetch = db.RepositoryACLSet
-					.First(s => s.RepositoryId == id && s.UserId == uid);
+					.FirstOrDefault(s => s.RepositoryId == id && s.UserId == uid);
 				if (fetch != null)
 					return AccessControlSettingHelper.Compare(fetch.ACS, action);
 
@@ -50,7 +50,7 @@ namespace DocSpin2.Util
 					return true;
 
 				DocumentACL fetch = db.DocumentACLSet
-					.First(a => a.DocumentId == id && a.UserId == ApplicationUser.CurrentUserId);
+					.FirstOrDefault(a => a.DocumentId == id && a.UserId == ApplicationUser.CurrentUserId);
 				if (fetch != null)
 					return AccessControlSettingHelper.Compare(fetch.ACS, action);
 

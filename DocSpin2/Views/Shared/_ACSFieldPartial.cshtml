@@ -8,7 +8,14 @@
 		{
 			<div class="input-group-sm @(acs == AccessControlSetting.SupervisorOnly ? "col-xs-6" : "col-xs-4")">
 				<div class="input-group-addon col-xs-1">
-					@Html.CheckBox("ACS", (Model != null && ((AccessControlSetting)Model).HasFlag(acs)), new { @value = (int)acs })
+					@if (acs != AccessControlSetting.SupervisorOnly)
+					{ 
+						@Html.RadioButton("ACS", (Model != null && ((AccessControlSetting)Model).HasFlag(acs)), new { @value = (int)acs })
+					}
+					else
+					{ 
+						@Html.CheckBox("ACS", (Model != null && ((AccessControlSetting)Model).HasFlag(acs)), new { @value = (int)acs })
+					}
 				</div>
 				<div class="input-group-addon">
 					@Html.Raw(AccessControlSettingHelper.DescribeSingle(acs))
