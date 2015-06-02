@@ -10,8 +10,10 @@ namespace DocSpin2.Util
 	//(whether required action is permitted)
 	public class ObjectAuth
 	{
-		public static bool RepositoryAction(int id, AccessControlSetting action)
+		public static bool RepositoryAction(int? id, AccessControlSetting action)
 		{
+			if (id == null)
+				return false;
 			using (var db = ApplicationDbContext.Create())
 			{
 				Repository repo = db.RepositorySet.First(r => r.Id == id);
@@ -32,11 +34,12 @@ namespace DocSpin2.Util
 
 				return AccessControlSettingHelper.Compare(repo.ACS, action);
 			}
-			return false;
 		}
 
-		public static bool DocumentAction(int id, AccessControlSetting action)
+		public static bool DocumentAction(int? id, AccessControlSetting action)
 		{
+			if (id == null)
+				return false;
 			using (var db = ApplicationDbContext.Create())
 			{
 				Document doc = db.DocumentSet.First(d => d.Id == id);
@@ -56,7 +59,6 @@ namespace DocSpin2.Util
 
 				return AccessControlSettingHelper.Compare(doc.ACS, action);
 			}
-			return false;
 		}
 	}
 }

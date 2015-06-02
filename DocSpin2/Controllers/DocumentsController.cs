@@ -48,9 +48,6 @@ namespace DocSpin2.Controllers
         // GET: Documents/Create
         public ActionResult Create()
         {
-			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
-
 			ViewData["RepositoryList"] =
 				new SelectList(Repository.GetRepositoriesList(), "Id", "Name");
 			
@@ -62,11 +59,8 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Name,Description,ACS,RepositoryId")] Document document)
         {
-			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
+			if (!ObjectAuth.RepositoryAction(int.Parse(this.Request["RepositoryId"]), AccessControlSetting.Write))
 				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
-
-			ViewData["RepositoryList"] =
-				new SelectList(Repository.GetRepositoriesList(), "Id", "Name");
 
 			if (ModelState.IsValid)
             {
@@ -74,6 +68,9 @@ namespace DocSpin2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+			ViewData["RepositoryList"] =
+				new SelectList(Repository.GetRepositoriesList(), "Id", "Name");
 
             return View(document);
         }
@@ -102,12 +99,17 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Document document)
         {
-			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
-
-            if (ModelState.IsValid)
+			if (ModelState.IsValid)
             {
-                db.Entry(document).State = EntityState.Modified;
+				Document find = db.DocumentSet.Find(document.Id);
+				if (!ObjectAuth.DocumentAction(find.Id, AccessControlSetting.Write))
+					return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
+				find.Name = document.Name;
+				find.Description = document.Description;
+				find.ACS = document.ACS;
+
+                db.Entry(find).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

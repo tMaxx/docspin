@@ -26,6 +26,8 @@ namespace DocSpin2.Models
 	
 	public class AccessControlSettingHelper
 	{
+		public static AccessControlSetting Default { get { return AccessControlSetting.Write; } }
+
 		public static string DescribeSingle(uint a)
 		{
 			if ((a & 32u) == 32u)

@@ -92,7 +92,7 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Repository repository)
         {
-			if (!ObjectAuth.RepositoryAction(id, AccessControlSetting.Write))
+			if (!ObjectAuth.RepositoryAction(int.Parse(this.Request["Id"]), AccessControlSetting.Write))
 				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
 			
 			if (ModelState.IsValid)

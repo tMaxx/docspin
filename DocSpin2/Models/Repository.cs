@@ -13,7 +13,7 @@ namespace DocSpin2.Models
     {
         public Repository()
         {
-			this.ACS = new AccessControlSetting();
+			this.ACS = AccessControlSettingHelper.Default;
 			this.Supervisor = new HashSet<Supervisor>();
             this.Documents = new HashSet<Document>();
             this.ACL = new HashSet<RepositoryACL>();
@@ -48,18 +48,21 @@ namespace DocSpin2.Models
 		}
 
 
-		public static List<Repository> GetRepositoriesList(bool isAdmin = (ApplicationUser.CurrentUserRole == UserRole.Admin))
+		public static List<Repository> GetRepositoriesList(bool? isAdmin = null)
 		{
-			var ret = null;
+			if (isAdmin == null)
+				isAdmin = (ApplicationUser.CurrentUserRole == UserRole.Admin);
+
 			using (var ctx = new ApplicationDbContext())
 			{
 				if (isAdmin == true)
 				{
-					ret = from r in ctx.RepositorySet select r;
+					var ret = from r in ctx.RepositorySet select r;
+					return ret.Distinct().ToList();
 				}
 				else 
 				{
-					ret = from r in ctx.RepositorySet
+					var ret = from r in ctx.RepositorySet
 						  where ( //is a supervisor
 									(from s in ctx.SupervisorSet
 									 where s.User.Id == ApplicationUser.CurrentUserId
@@ -77,11 +80,9 @@ namespace DocSpin2.Models
 									select l.Id).Count() == 0
 								)
 						  select r;
+					return ret.Distinct().ToList();
 				}
 			}
-			if (ret != null)
-				return ret.Distinct().ToList();
-			return ret;
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace DocSpin2.Models
         public Document()
         {
             this.IsRemoved = false;
-			this.ACS = new AccessControlSetting();
+			this.ACS = AccessControlSettingHelper.Default;
 			this.Versions = new HashSet<DocumentVersion>();
             this.Comments = new HashSet<Comment>();
             this.ACL = new HashSet<DocumentACL>();
