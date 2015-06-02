@@ -60,5 +60,21 @@ namespace DocSpin2.Util
 				return AccessControlSettingHelper.Compare(doc.ACS, action);
 			}
 		}
+
+		public static bool IsRepositorySupervisor(int? id)
+		{
+			if (id == null)
+				return false;
+
+			if (ApplicationUser.CurrentUserRole == UserRole.Admin)
+				return true;
+			
+			using (var db = ApplicationDbContext.Create())
+			{
+				return db.SupervisorSet
+					.Where(s => s.Id == id && s.UserId == ApplicationUser.CurrentUserId)
+					.Count() > 0;
+			}
+		}
 	}
 }

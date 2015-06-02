@@ -49,8 +49,6 @@ namespace DocSpin2.Controllers
         }
 
         // POST: Repositories/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description,ACS")] Repository repository)
@@ -81,7 +79,7 @@ namespace DocSpin2.Controllers
                 return HttpNotFound();
             }
 
-			if (!ObjectAuth.RepositoryAction(id, AccessControlSetting.Write))
+			if (!ObjectAuth.IsRepositorySupervisor(int.Parse(this.Request["Id"])))
 				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
 
 			return View(repository);
@@ -92,7 +90,7 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Repository repository)
         {
-			if (!ObjectAuth.RepositoryAction(int.Parse(this.Request["Id"]), AccessControlSetting.Write))
+			if (!ObjectAuth.IsRepositorySupervisor(int.Parse(this.Request["Id"])))
 				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
 			
 			if (ModelState.IsValid)

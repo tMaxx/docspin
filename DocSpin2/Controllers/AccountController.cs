@@ -166,15 +166,10 @@ namespace DocSpin2.Controllers
 					FullName = model.FullName
 				};
 				IdentityResult result = null;
-				try
-				{
-					result = await UserManager.CreateAsync(user, model.Password);
-				}
-				catch (DbEntityValidationException e)
-				{
 
-				}
-                if (result != null && result.Succeeded)
+				result = await UserManager.CreateAsync(user, model.Password);
+
+				if (result != null && result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
