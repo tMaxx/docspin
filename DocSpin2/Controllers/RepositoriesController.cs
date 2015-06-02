@@ -79,7 +79,7 @@ namespace DocSpin2.Controllers
                 return HttpNotFound();
             }
 
-			if (!ObjectAuth.IsRepositorySupervisor(int.Parse(this.Request["Id"])))
+			if (!ObjectAuth.IsRepositorySupervisor(id))
 				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
 
 			return View(repository);
