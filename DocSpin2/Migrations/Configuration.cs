@@ -49,7 +49,8 @@ namespace DocSpin2.Migrations
 				{
 					UserName = "admin@admin.admin",
 					Email = "admin@admin.admin",
-					FullName = "System Administrator"
+					FullName = "System Administrator",
+					Role = Models.UserRole.Admin
 				};
 				IdentityResult result = aum.Create(user, "Admin");
 			}
