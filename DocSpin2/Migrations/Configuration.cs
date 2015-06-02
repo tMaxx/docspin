@@ -51,7 +51,7 @@ namespace DocSpin2.Migrations
 					Email = "admin@admin.admin",
 					FullName = "System Administrator"
 				};
-				IdentityResult result = await aum.CreateAsync(user, "Admin");
+				IdentityResult result = aum.Create(user, "Admin");
 			}
 
         }
