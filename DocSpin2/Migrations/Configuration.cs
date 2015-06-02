@@ -42,18 +42,6 @@ namespace DocSpin2.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-			if (context.Users.Where(u => u.Email == "admin@admin.admin").Count() == 0)
-			{
-				ApplicationUserManager aum = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
-				var user = new ApplicationUser
-				{
-					UserName = "admin@admin.admin",
-					Email = "admin@admin.admin",
-					FullName = "System Administrator",
-					Role = Models.UserRole.Admin
-				};
-				IdentityResult result = aum.Create(user, "Admin");
-			}
 
         }
     }
