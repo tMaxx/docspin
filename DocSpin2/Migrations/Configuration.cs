@@ -42,6 +42,10 @@ namespace DocSpin2.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+			context.RepositorySet.AddOrUpdate(r => r.Name,
+				new Repository { Name = "ReadOnly", ACS = Models.AccessControlSetting.Read },
+				new Repository { Name = "Write", ACS = Models.AccessControlSetting.Write }
+				);
 
         }
     }

@@ -91,9 +91,9 @@
                 @Html.DisplayFor(modelItem => item.IsRemoved)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Documents", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", "Documents", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", "Documents", new { id = item.Id })
+                @Html.ActionLink("Edit", "Edit", "Documents", new { id = item.Id }, null) |
+                @Html.ActionLink("Details", "Details", "Documents", new { id = item.Id }, null) |
+                @Html.ActionLink("Delete", "Delete", "Documents", new { id = item.Id }, null)
             </td>
         </tr>
     }

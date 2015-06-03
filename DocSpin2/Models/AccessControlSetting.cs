@@ -80,14 +80,13 @@ namespace DocSpin2.Models
 		{
 			HttpRequestBase req = controllerContext.HttpContext.Request;
 			string[] vals = req.Form.GetValues("ACS");
-			int temp;
+			byte temp;
 			AccessControlSetting ret = AccessControlSetting.None;
 
 			foreach (string v in vals)
 			{
-				try	{ temp = byte.Parse(v);	}
-				catch (Exception) { continue; }
-				ret |= (AccessControlSetting)temp;
+				if (byte.TryParse(v, out temp) && temp != 0)
+					ret |= (AccessControlSetting)temp;
 			}
 			return ret;
 		}

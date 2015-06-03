@@ -7,6 +7,7 @@
 		AccessControlSetting.Write,
 		AccessControlSetting.SupervisorOnly
 	};
+	AccessControlSetting fmodel = Model ?? AccessControlSetting.None;
 }
 <div class="form-group">
 	@Html.LabelForModel("Access for item", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -17,11 +18,11 @@
 				<div class="input-group-addon col-xs-1">
 					@if (acs != AccessControlSetting.SupervisorOnly)
 					{
-						@Html.RadioButton("ACS", (int)acs, (Model != null && (((AccessControlSetting)Model & acs) == (AccessControlSetting)Model)))
+						@Html.RadioButton("ACS", (int)acs, (Model != null && ((fmodel & acs) == fmodel)))
 					}
 					else
 					{ 
-						@Html.CheckBox("ACS", (Model != null && ((AccessControlSetting)Model).HasFlag(acs)), new { @value = (int)acs })
+						@Html.CheckBox("ACS", (Model != null && fmodel.HasFlag(acs)), new { @value = (int)acs })
 					}
 				</div>
 				<div class="input-group-addon">
