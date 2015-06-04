@@ -5,62 +5,86 @@
 }
 
 <h2>Details</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h4>Document</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-<div>
-    <h4>Document</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TsCreated)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TsCreated)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TsCreated)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TsCreated)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TsModified)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TsModified)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TsModified)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.TsModified)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ACS)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ACS)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ACS)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ACS)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IsRemoved)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsRemoved)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsRemoved)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsRemoved)
-        </dd>
+        </dl>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h4>Comments</h4>
+        <hr />
+        @foreach (var item in Model.Comments)
+        {
+            @Html.Label("Autor: ")
+            @Html.DisplayFor(model => item.Timestamp)<br />
+            @Html.DisplayFor(model => item.Content)<hr>
+        }
 
-    </dl>
+        <div id="messages"></div>
+        @using (Ajax.BeginForm("Chat", new AjaxOptions()
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.InsertAfter,
+            UpdateTargetId = "messages"
+        }))
+        {
+            @Html.TextArea("msg", new { rows = "3", cols = "80" })<br />
+            @Html.Hidden("docId", Model.Id)
+            <input type="submit" value="Send" />
+        }
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

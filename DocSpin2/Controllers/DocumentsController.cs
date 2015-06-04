@@ -33,7 +33,9 @@ namespace DocSpin2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Document document = db.DocumentSet.Find(id);
+            Document document = db.DocumentSet.Where(r => r.Id == id).Include(d => d.Comments).FirstOrDefault();
+            ApplicationUser users = db.Users.FirstOrDefault();
+            
             if (document == null)
             {
                 return HttpNotFound();
@@ -183,6 +185,23 @@ namespace DocSpin2.Controllers
             }
 
             return RedirectToAction("FileUpload");
+        }
+
+        public ActionResult Chat(string msg, string docId)
+        {
+            
+            Comment comment = new Comment()
+            {
+                Content = msg,
+                Timestamp = DateTime.Now,
+                IsRemoved = false,
+                DocumentId = int.Parse(docId),
+                AuthorId = ApplicationUser.CurrentUserId
+            };
+            db.CommentSet.Add(comment);
+            db.SaveChanges();
+            ViewBag.UserName = ApplicationUser.CurrentUser.FullName;
+            return PartialView("Comment", comment);
         }
     }
 }
