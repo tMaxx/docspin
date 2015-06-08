@@ -61,12 +61,11 @@ namespace DocSpin2.Models
 			//is a supervisor of some sort
 			if (action.HasFlag(AccessControlSetting.SupervisorOnly))
 				return true;
-			against &= action;
 			//supervisor should be checked beforehand
 			if (against.HasFlag(AccessControlSetting.SupervisorOnly))
 				return false;
 			//filter values
-			return against == action;
+			return (against & action) == action;
 		}
 
 		public static bool Compare(AccessControlSetting against, AccessControlSetting action, bool isSuper)

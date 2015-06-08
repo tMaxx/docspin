@@ -70,6 +70,7 @@
         @foreach (var item in Model.Comments)
         {
             @Html.Label("Autor: ")
+			@Html.DisplayFor(model => item.Author.FullName)
             @Html.DisplayFor(model => item.Timestamp)<br />
             @Html.DisplayFor(model => item.Content)<hr>
         }

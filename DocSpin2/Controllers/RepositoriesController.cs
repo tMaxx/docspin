@@ -11,6 +11,7 @@ using DocSpin2.Util;
 
 namespace DocSpin2.Controllers
 {
+	[Authorize]
     public class RepositoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -34,8 +35,9 @@ namespace DocSpin2.Controllers
                 return HttpNotFound();
             }
 
-			if (!ObjectAuth.RepositoryAction(id, AccessControlSetting.Read))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			var e = ObjectAuth.RepositoryAction(id, AccessControlSetting.Read);
+			if (e != null)
+				return View("AuthError", e);
 
             return View(repository);
         }

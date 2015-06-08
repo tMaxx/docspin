@@ -39,7 +39,7 @@
 			@Html.LabelFor(model => model.RepositoryId, htmlAttributes: new { @class = "control-label col-md-2" })
 			<div class="col-md-10">
 				<div class="select">
-					@Html.DropDownListFor(model => Model.RepositoryId, ViewData["RepositoryList"] as SelectList)
+					@Html.DropDownListFor(model => model.RepositoryId, ViewData["RepositoryList"] as SelectList)
 					@Html.ValidationMessageFor(model => model.RepositoryId, "", new { @class = "text-danger" })
 				</div>
 			</div>

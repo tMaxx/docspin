@@ -23,7 +23,7 @@ namespace DocSpin2.Controllers
         {
 			if (ApplicationUser.CurrentUserRole == UserRole.Admin)
 	            return View(db.DocumentSet.ToList());
-			return View("Index", "Home");
+			return RedirectToAction("Index", "Repositories");
         }
 
         // GET: Documents/Details/5
@@ -33,16 +33,17 @@ namespace DocSpin2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Document document = db.DocumentSet.Where(r => r.Id == id).Include(d => d.Comments).FirstOrDefault();
-            ApplicationUser users = db.Users.FirstOrDefault();
+            Document document = db.DocumentSet.Where(r => r.Id == id)
+				.Include(d => d.Comments.Select(c => c.Author)).FirstOrDefault();
             
             if (document == null)
             {
                 return HttpNotFound();
             }
-			
-			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Read))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+
+			var e = ObjectAuth.DocumentAction(id, AccessControlSetting.Write);
+			if (e != null)
+				return View("AuthError", e);
 			
 			return View(document);
         }
@@ -61,14 +62,15 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Name,Description,ACS,RepositoryId")] Document document)
         {
-			if (!ObjectAuth.RepositoryAction(int.Parse(this.Request["RepositoryId"]), AccessControlSetting.Write))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			var e = ObjectAuth.DocumentAction(int.Parse(this.Request["RepositoryId"]), AccessControlSetting.Write);
+			if (e != null)
+				return View("AuthError", e);
 
 			if (ModelState.IsValid)
             {
                 db.DocumentSet.Add(document);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+				return RedirectToAction("Details", "Repositories", new { id = document.RepositoryId });
             }
 
 			ViewData["RepositoryList"] =
@@ -90,8 +92,9 @@ namespace DocSpin2.Controllers
                 return HttpNotFound();
             }
 
-			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Read))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			var e = ObjectAuth.DocumentAction(id, AccessControlSetting.Read);
+			if (e != null)
+				return View("AuthError", e);
 
             return View(document);
         }
@@ -104,8 +107,9 @@ namespace DocSpin2.Controllers
 			if (ModelState.IsValid)
             {
 				Document find = db.DocumentSet.Find(document.Id);
-				if (!ObjectAuth.DocumentAction(find.Id, AccessControlSetting.Write))
-					return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+				var e = ObjectAuth.DocumentAction(find.Id, AccessControlSetting.Write);
+				if (e != null)
+					return View("AuthError", e);
 
 				find.Name = document.Name;
 				find.Description = document.Description;
@@ -131,8 +135,9 @@ namespace DocSpin2.Controllers
                 return HttpNotFound();
             }
 
-			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			var e = ObjectAuth.DocumentAction(id, AccessControlSetting.Write);
+			if (e != null)
+				return View("AuthError", e);
             
 			return View(document);
         }
@@ -142,8 +147,9 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-			if (!ObjectAuth.DocumentAction(id, AccessControlSetting.Write))
-				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
+			var e = ObjectAuth.DocumentAction(id, AccessControlSetting.Write);
+			if (e != null)
+				return View("AuthError", e);
 
             Document document = db.DocumentSet.Find(id);
 			if (ApplicationUser.CurrentUserRole != UserRole.Admin)

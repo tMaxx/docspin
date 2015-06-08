@@ -11,7 +11,6 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using DocSpin2.Models;
 using System.Data.Entity.Validation;
 using System.Net;
 
@@ -21,7 +20,6 @@ namespace DocSpin2
 	{
 		public static void Configure()
 		{
-			//noop for future use
 		}
 	}
 }

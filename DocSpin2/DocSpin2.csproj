@@ -186,6 +186,7 @@
     <Compile Include="Models\ApplicationUser.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Models\Comment.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -300,6 +301,7 @@
     <Content Include="Views\Shared\_ACSFieldPartial.cshtml" />
     <Content Include="Views\Documents\FileUpload.cshtml" />
     <Content Include="Views\Documents\Comment.cshtml" />
+    <Content Include="Views\Shared\AuthError.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

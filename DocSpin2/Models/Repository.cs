@@ -39,11 +39,41 @@ namespace DocSpin2.Models
 					return true;
 				using (var ctx = ApplicationDbContext.Create())
 				{
-					var ret = from s in this.Supervisor
+					var ret = from s in ctx.SupervisorSet
 							  where s.User.Id == ApplicationUser.CurrentUserId
+									&& s.RepositoryId == this.Id
 							  select s;
 					return ret.Count() > 0;
 				}
+			}
+		}
+
+		public bool IsReadOnly
+		{
+			get
+			{
+				using (var ctx = ApplicationDbContext.Create())
+				{
+					var ret = from a in ctx.RepositoryACLSet
+							  where a.UserId == ApplicationUser.CurrentUserId
+									&& a.RepositoryId == this.Id
+							  select a;
+					var obj = ret.FirstOrDefault();
+					AccessControlSetting acs;
+					if (obj != null)
+					{
+						acs = obj.ACS & AccessControlSetting.Write;
+						if (acs == AccessControlSetting.Read
+							|| acs == AccessControlSetting.Comment)
+							return true;
+					}
+
+					acs = this.ACS & AccessControlSetting.Write;
+					if (acs == AccessControlSetting.Read
+						|| acs == AccessControlSetting.Comment)
+						return true;
+				}
+				return false;
 			}
 		}
 
@@ -65,19 +95,18 @@ namespace DocSpin2.Models
 					var ret = from r in ctx.RepositorySet
 						  where ( //is a supervisor
 									(from s in ctx.SupervisorSet
-									 where s.User.Id == ApplicationUser.CurrentUserId
-										   && s.Repository.Id == r.Id
+									 where (s.User.Id == ApplicationUser.CurrentUserId
+										   && s.Repository.Id == r.Id)
 									 select s.Id).Count() > 0
 								)
 								||
 								( //has standard access
-								r.ACS != AccessControlSetting.SupervisorOnly
-								&& (from l in ctx.RepositoryACLSet
-									where l.User.Id == ApplicationUser.CurrentUserId
-										  && l.Repository.Id == r.Id
-										  && l.ACS != AccessControlSetting.None
-										  && l.ACS != AccessControlSetting.SupervisorOnly
-									select l.Id).Count() == 0
+									!r.ACS.HasFlag(AccessControlSetting.SupervisorOnly)
+									&& (from l in ctx.RepositoryACLSet
+										where (l.User.Id == ApplicationUser.CurrentUserId
+											  && l.Repository.Id == r.Id
+											  && l.ACS != AccessControlSetting.None) //access not revoked
+										select l.Id).Count() == 0
 								)
 						  select r;
 					return ret.Distinct().ToList();

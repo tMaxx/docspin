@@ -13,9 +13,12 @@
 <div class="row">
 	@foreach (var itm in Model)
 	{
-		<form action="/Repositories/Details/@(itm.Id)" class="col-md-4">
-			<button type="submit" class="btn btn-lg btn-block">@Html.DisplayFor(d => itm.Name)</button>
-		</form>
+		using (Html.BeginForm("Details", "Repositories", new { id = itm.Id }, FormMethod.Post, new { @class = "col-md-4"}))
+		{
+			string attrib = itm.IsSupervisor ? " btn-success" : (itm.IsReadOnly ? "" : " btn-info");
+			
+			<button type="submit" class="btn btn-lg btn-block@(attrib)">@Html.DisplayFor(d => itm.Name)</button>
+		}
 	}
 </div>
 

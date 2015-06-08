@@ -1,4 +1,6 @@
 ﻿@using Microsoft.AspNet.Identity
+@using DocSpin2.Models
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -6,16 +8,31 @@
     @Html.AntiForgeryToken()
 
     <ul class="nav navbar-nav navbar-right">
+		@{
+			string admin_color = "";
+			if (ApplicationUser.CurrentUserRole == UserRole.Admin)
+			{
+				admin_color = "color:red !important;";
+			}
+		}
+		@if (HttpContext.Current.IsDebuggingEnabled)
+		{
+			<li class="text-info">@ApplicationUser.CurrentUserId</li>
+		}
         <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("[" + ApplicationUser.CurrentUser.FullName + "]", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", style = admin_color })
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
     </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
+		@if (HttpContext.Current.IsDebuggingEnabled)
+	{
+		<li class="text-info">@ApplicationUser.CurrentUserId</li>
+	}
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>

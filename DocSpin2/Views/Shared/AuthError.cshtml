@@ -1,0 +1,31 @@
+﻿@model DocSpin2.Util.ObjectAuthError
+@using DocSpin2.Util
+
+@{
+	string reason;
+    ViewBag.Title = "Object Authentication Error";
+	if (Model.err == ObjectAuthErrorReason.RepositoryNotFound
+		|| Model.err == ObjectAuthErrorReason.DocumentNotFound)
+	{
+		Response.StatusCode = 404;
+		reason = "Required " 
+			+ (Model.err == ObjectAuthErrorReason.RepositoryNotFound ? "repository" : "document")
+			+ " was not found.";
+	}
+	else
+	{
+		Response.StatusCode = 403;
+		reason = "You do not have required permissions for this "
+			+ (Model.err == ObjectAuthErrorReason.RepositoryActionDenied ? "repository" : "document")
+			+ " to perform desired action.";
+	}
+}
+
+<h1 class="text-danger">Error @Response.StatusCode</h1>
+<h3 class="text-danger">@reason</h3>
+
+@if (HttpContext.Current.IsDebuggingEnabled)
+{ 
+	<h4>@(Model.details)</h4>
+}
+<h4>Please check your request and try again.</h4>

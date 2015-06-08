@@ -10,6 +10,9 @@ using System.Web;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin;
+using System.Data;
+using System.Data.Entity;
+using System.Linq;
 
 
 namespace DocSpin2.Models
@@ -56,25 +59,28 @@ namespace DocSpin2.Models
 		private static ApplicationUser _curUserObj = null;
 		[NotMapped]
 		private static UserRole _curUserRole = UserRole.None;
+
+		//use only when certain that user is logged in
 		public static ApplicationUser CurrentUser
 		{
 			get
 			{
 				//slight abuse ahead
-				if (!_curUserObjInited)
+				if (!Session.IsInitialized)
 				{
-					var usr = HttpContext.Current
-						.GetOwinContext()
-						.Get<ApplicationSignInManager>()
-						.UserManager.FindById(
-						HttpContext.Current.User.Identity.GetUserId()
-						);
-					_curUserObj = usr;
-					if (_curUserObj != null)
-						_curUserRole = usr.Role;
-					_curUserObjInited = true;
+					using (var ctx = new ApplicationDbContext())
+					{
+						var uid = HttpContext.Current.User.Identity.GetUserId();
+						var usrobj = ctx.Users.FirstOrDefault(u => u.Id == uid);
+						if (usrobj != null)
+						{
+							Session.Set<ApplicationUser>("UserObj", usrobj);
+							Session.Set<UserRole>("UserRole", usrobj.Role);
+						}
+					}
+					Session.IsInitialized = true;
 				}
-				return _curUserObj;
+				return Session.Get<ApplicationUser>("UserObj");
 			}
 		}
 
@@ -82,9 +88,9 @@ namespace DocSpin2.Models
 		{
 			get
 			{
-				if (!_curUserObjInited && CurrentUser == null)
+				if (Session.IsInitialized && CurrentUser == null)
 					return UserRole.None;
-				return (UserRole)_curUserRole;
+				return (UserRole)Session.Get<UserRole>("UserRole");
 			}
 		}
 
@@ -92,11 +98,16 @@ namespace DocSpin2.Models
 		{
 			get
 			{
-				if ((!_curUserObjInited && CurrentUser == null)
-					|| (_curUserObj == null))
+				if ((!Session.IsInitialized && CurrentUser == null)
+					|| (!Session.IsSet("UserObj")))
 					return "not logged in";
-				return _curUserObj.Id;
+				return CurrentUser.Id;
 			}
+		}
+
+		public static void ClearData()
+		{
+			Session.Clear();
 		}
     }
 }

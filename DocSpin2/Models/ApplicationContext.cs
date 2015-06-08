@@ -18,6 +18,7 @@ namespace DocSpin2.Models
 		public virtual IDbSet<Comment> CommentSet { get; set; }
 		public virtual IDbSet<RepositoryACL> RepositoryACLSet { get; set; }
 		public virtual IDbSet<DocumentACL> DocumentACLSet { get; set; }
+		public override IDbSet<ApplicationUser> Users { get; set; }
 
 		public ApplicationDbContext()
 			: base("name=DefaultConnection")
