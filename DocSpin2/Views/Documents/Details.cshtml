@@ -57,7 +57,16 @@
             <dd>
                 @Html.DisplayFor(model => model.IsRemoved)
             </dd>
-
+            <dt>
+                @Html.Label("File versions")
+            </dt>
+            @foreach (var item in Model.Versions)
+                {
+                    <dd>
+                            @Html.ActionLink(item.Filename, "FileDownload", "Documents", new { id = item.Id }, null)
+                            @Html.DisplayFor(model => item.FileTimestamp)
+                    </dd>
+              }
         </dl>
         <p>
             @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
@@ -67,6 +76,7 @@
     <div class="col-md-4">
         <h4>Comments</h4>
         <hr />
+
         @foreach (var item in Model.Comments)
         {
             @Html.Label("Autor: ")

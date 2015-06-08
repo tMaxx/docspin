@@ -33,9 +33,8 @@ namespace DocSpin2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Document document = db.DocumentSet.Where(r => r.Id == id).Include(d => d.Comments).FirstOrDefault();
-            ApplicationUser users = db.Users.FirstOrDefault();
-            
+            Document document = db.DocumentSet.Where(r => r.Id == id).Include(d => d.Comments).Include(w => w.Versions).FirstOrDefault();
+             
             if (document == null)
             {
                 return HttpNotFound();
@@ -59,7 +58,7 @@ namespace DocSpin2.Controllers
         // POST: Documents/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,Description,ACS,RepositoryId")] Document document)
+        public ActionResult Create([Bind(Include = "Name,Description,ACS,RepositoryId")] Document document, Upload upload)
         {
 			if (!ObjectAuth.RepositoryAction(int.Parse(this.Request["RepositoryId"]), AccessControlSetting.Write))
 				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
@@ -67,8 +66,33 @@ namespace DocSpin2.Controllers
 			if (ModelState.IsValid)
             {
                 db.DocumentSet.Add(document);
+                               
+                foreach (var file in upload.Files)
+                {
+                    var fileName = "";
+                    var path = "";
+                    if (file.ContentLength > 0)
+                    {
+                        fileName = Path.GetFileName(file.FileName);
+                        path = Path.Combine(Util.FileManager.FileFolder, fileName);
+                        file.SaveAs(path);
+                    }
+                    DocumentVersion docv = new DocumentVersion()
+                    {
+                        FileTimestamp = DateTime.Now,
+                        Filename = fileName,
+                        OriginalFilename = fileName,
+                        UploadTimestamp = DateTime.Now,
+                        IsRemoved = false,
+                        Hash = path,
+                        DocumentId = document.Id,
+                        AuthorId = ApplicationUser.CurrentUserId
+                    };
+                    db.DocumentVersionSet.Add(docv);
+                }
+
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Repositories", new { id = this.Request["RepositoryId"] });
             }
 
 			ViewData["RepositoryList"] =
@@ -99,7 +123,7 @@ namespace DocSpin2.Controllers
         // POST: Documents/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Document document)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,ACS")] Document document, Upload upload)
         {
 			if (ModelState.IsValid)
             {
@@ -112,6 +136,32 @@ namespace DocSpin2.Controllers
 				find.ACS = document.ACS;
 
                 db.Entry(find).State = EntityState.Modified;
+
+                foreach (var file in upload.Files)
+                {
+                    var fileName = "";
+                    var path = "";
+                    if (file.ContentLength > 0)
+                    {
+                        fileName = Path.GetFileName(file.FileName);
+                        path = Path.Combine(Util.FileManager.FileFolder, fileName);
+                        file.SaveAs(path);
+                    }
+                 
+                    DocumentVersion docv = new DocumentVersion()
+                    {
+                        FileTimestamp = DateTime.Now,
+                        Filename = fileName,
+                        OriginalFilename = fileName,
+                        UploadTimestamp = DateTime.Now,
+                        IsRemoved = false,
+                        Hash = path,
+                        DocumentId = document.Id,
+                        AuthorId = ApplicationUser.CurrentUserId
+                    };
+                    db.DocumentVersionSet.Add(docv);
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -187,6 +237,19 @@ namespace DocSpin2.Controllers
             return RedirectToAction("FileUpload");
         }
 
+        
+
+        public ActionResult FileDownload(int? id)
+        {
+            DocumentVersion docv = db.DocumentVersionSet.Find(id);
+
+            byte[] fileBytes = System.IO.File.ReadAllBytes(@docv.Hash.ToString());
+            string fileName = docv.Filename;
+            return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
+        }
+
+
+
         public ActionResult Chat(string msg, string docId)
         {
             
@@ -203,5 +266,7 @@ namespace DocSpin2.Controllers
             ViewBag.UserName = ApplicationUser.CurrentUser.FullName;
             return PartialView("Comment", comment);
         }
+
+
     }
 }
