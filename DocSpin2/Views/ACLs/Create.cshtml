@@ -1,0 +1,48 @@
+﻿@model DocSpin2.Models.ACLCreateModel
+@using DocSpin2.Models
+
+@{
+	string singular = Model.object_type;
+	string plural = (singular == "Document" ? "Documents" : "Repositories");
+	ViewBag.Title = "ACL for " + singular;
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Repository</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("User", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.user_id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.user_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+		@Html.Partial("_ACSFieldPartial", Model == null ? new AccessControlSetting() : Model.acs)
+
+		@Html.HiddenFor(model => model.object_type)
+		@Html.HiddenFor(model => model.object_id)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { id = Model.object_id, type = Model.object_type })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

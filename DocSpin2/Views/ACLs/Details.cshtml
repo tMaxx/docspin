@@ -1,0 +1,54 @@
+﻿@model DocSpin2.Models.ACLViewModel
+
+@{
+	string singular = (Model.src_type == DocSpin2.Models.ACLViewModel.Type.Document ? "Document" : "Repository");
+	string plural = (Model.src_type == DocSpin2.Models.ACLViewModel.Type.Document ? "Documents" : "Repositories");
+	ViewBag.Title = "ACL for " + singular + " " + Model.src_type_name;
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>@singular ACL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           @singular name
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.src_type_name)
+        </dd>
+    </dl>
+</div>
+<p>
+	@Html.ActionLink("Add new entry", "Create", new { id = Model.src_type_id, type = singular })
+    <br /> 
+	@Html.ActionLink("Back to " + singular, "Index", plural, new { id = Model.src_type_id }) 
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            User name
+        </th>
+        <th>
+            ACS
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.elements)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(i => item.user_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.acs)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", "ACLs", new { id = item.model_id, type = singular })
+            </td>
+        </tr>
+    }
+</table>

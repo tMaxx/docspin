@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DocSpin2.Models.Repository>
+
+@{
+    ViewBag.Title = "Repositories";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+	@foreach (var itm in Model)
+	{
+		using (Html.BeginForm("Details", "Repositories", new { id = itm.Id }, FormMethod.Post, new { @class = "col-md-4"}))
+		{
+			string attrib = itm.IsSupervisor ? " btn-success" : (itm.IsReadOnly ? "" : " btn-info");
+			
+			<button type="submit" class="btn btn-lg btn-block@(attrib)">@Html.DisplayFor(d => itm.Name)</button>
+		}
+	}
+</div>
+

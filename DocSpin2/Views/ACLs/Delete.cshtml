@@ -1,0 +1,66 @@
+﻿@model DocSpin2.Models.ACLDeleteModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>@Model.object_type ACL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+	@if (Model.object_type == "Repository")
+	{
+		<dt>
+			Repository
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.object_name)
+		</dd>
+	}
+	else
+	{
+		<dt>
+			Repository
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.repo_name)
+		</dd>
+
+		<dt>
+			Document
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.object_name)
+		</dd>
+	}
+
+		<dt>
+			User
+		</dt>
+		<dd>
+			@Html.DisplayFor(model => model.user_name)
+		</dd>
+
+        <dt>
+            ACS
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.acs)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+		@Html.HiddenFor(m => m.object_id)
+		@Html.HiddenFor(m => m.object_type)
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Details", new { id = Model.object_id, type = Model.object_type })
+        </div>
+    }
+</div>

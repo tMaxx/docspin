@@ -53,13 +53,6 @@ namespace DocSpin2.Models
         public virtual ICollection<RepositoryACL> RepositoryACL { get; set; }
         public virtual ICollection<DocumentACL> DocumentACL { get; set; }
 
-		[NotMapped]
-		private static bool _curUserObjInited = false;
-		[NotMapped]
-		private static ApplicationUser _curUserObj = null;
-		[NotMapped]
-		private static UserRole _curUserRole = UserRole.None;
-
 		//use only when certain that user is logged in
 		public static ApplicationUser CurrentUser
 		{
@@ -108,6 +101,17 @@ namespace DocSpin2.Models
 		public static void ClearData()
 		{
 			Session.Clear();
+		}
+
+		public static List<ApplicationUser> GetList()
+		{
+			using (var db = ApplicationDbContext.Create())
+			{
+				var ret = from u in db.Users
+						  where u.Role != UserRole.Admin
+						  select u;
+				return ret.ToList();
+			}
 		}
     }
 }

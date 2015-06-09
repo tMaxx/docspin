@@ -174,6 +174,7 @@
     <Compile Include="Controllers\DocumentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ACLsController.cs" />
     <Compile Include="Controllers\RepositoriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -183,6 +184,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ACLViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -302,6 +304,10 @@
     <Content Include="Views\Documents\FileUpload.cshtml" />
     <Content Include="Views\Documents\Comment.cshtml" />
     <Content Include="Views\Shared\AuthError.cshtml" />
+    <Content Include="Views\ACLs\Create.cshtml" />
+    <Content Include="Views\ACLs\Delete.cshtml" />
+    <Content Include="Views\ACLs\Details.cshtml" />
+    <Content Include="Views\ACLs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
