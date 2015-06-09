@@ -257,7 +257,15 @@ namespace DocSpin2.Controllers
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
 
+        public ActionResult DeleteFile(int? id)
+        {
+            DocumentVersion docv = db.DocumentVersionSet.Find(id);
+            int documentId = docv.DocumentId;
+            db.DocumentVersionSet.Remove(docv);
+            db.SaveChanges();
+            return RedirectToAction("Details", "Documents", new { id = documentId });
 
+        }
 
         public ActionResult Chat(string msg, string docId)
         {

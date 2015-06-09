@@ -65,6 +65,8 @@
                     <dd>
                             @Html.ActionLink(item.Filename, "FileDownload", "Documents", new { id = item.Id }, null)
                             @Html.DisplayFor(model => item.FileTimestamp)
+                        <a href="@Url.Action("DeleteFile", "Documents", new { id = item.Id })"><img src="@Url.Content("/Content/delete.gif")" />
+                        </a>
                     </dd>
               }
         </dl>

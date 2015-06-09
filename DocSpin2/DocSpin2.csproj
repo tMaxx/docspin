@@ -308,6 +308,7 @@
     <Content Include="Views\ACLs\Delete.cshtml" />
     <Content Include="Views\ACLs\Details.cshtml" />
     <Content Include="Views\ACLs\Index.cshtml" />
+    <Content Include="Views\Account\Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

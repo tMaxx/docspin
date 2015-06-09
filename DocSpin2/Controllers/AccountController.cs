@@ -19,6 +19,7 @@ namespace DocSpin2.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -132,7 +133,7 @@ namespace DocSpin2.Controllers
                 {
                     //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Users", "Account");
                 }
                 AddErrors(result);
             }
@@ -273,6 +274,12 @@ namespace DocSpin2.Controllers
 			return Content("Status: " + (result != null && result.Succeeded ? "Admin created" : "Account already exists"));
 		}
 
+        public ActionResult Users()
+        {
+
+            return View(db.Users.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -352,5 +359,6 @@ namespace DocSpin2.Controllers
             }
         }
         #endregion
+
     }
 }
