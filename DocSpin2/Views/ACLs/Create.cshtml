@@ -27,7 +27,7 @@
             </div>
         </div>
 
-		@Html.Partial("_ACSFieldPartial", Model == null ? new AccessControlSetting() : Model.acs, new ViewDataDictionary { {"with_none" , true} })
+		@Html.Partial("_ACSFieldPartial", Model == null ? new AccessControlSetting() : Model.ACS, new ViewDataDictionary { {"with_none" , true} })
 
 		@Html.HiddenFor(model => model.object_type)
 		@Html.HiddenFor(model => model.object_id)

@@ -32,10 +32,10 @@ namespace DocSpin2.Models
 	[NotMapped]
 	public class ACLCreateModel
 	{
-		public int object_id;
-		public string object_type;
-		public string user_id = "";
-		public AccessControlSetting acs;
+		public int object_id { get; set; }
+		public string object_type { get; set; }
+		public string user_id { get; set; }
+		public AccessControlSetting ACS { get; set; }
 	}
 
 	[NotMapped]

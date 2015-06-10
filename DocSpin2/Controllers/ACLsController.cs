@@ -105,14 +105,14 @@ namespace DocSpin2.Controllers
 			{
 				object_id = id.Value,
 				object_type = type,
-				acs = AccessControlSetting.None
+				ACS = AccessControlSetting.None
 			});
         }
 
         // POST: ACLs/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "object_id,object_type,user_id,acs")] ACLCreateModel acl)
+        public ActionResult Create([Bind(Include = "object_id,object_type,user_id,ACS")] ACLCreateModel acl)
         {
 			if (!(acl.object_type == "Repository" || acl.object_type == "Document"))
 			{
@@ -129,14 +129,14 @@ namespace DocSpin2.Controllers
 					db.RepositoryACLSet.Add(new RepositoryACL 
 					{
 						RepositoryId = acl.object_id,
- 						ACS = acl.acs,
+ 						ACS = acl.ACS,
 						UserId = acl.user_id
 					});
 				else
 					db.DocumentACLSet.Add(new DocumentACL
 					{
 						DocumentId = acl.object_id,
-						ACS = acl.acs,
+						ACS = acl.ACS,
 						UserId = acl.user_id
 					}); 
 				db.SaveChanges();
@@ -174,7 +174,7 @@ namespace DocSpin2.Controllers
 					object_name = fetch.Document.Name,
 					object_type = "Document",
 					repo_name = fetch.Document.Repository.Name,
-					acs = fetch.ACS,
+					ACS = fetch.ACS,
 					user_name = fetch.User.FullName
 				};
 			} 
@@ -188,7 +188,7 @@ namespace DocSpin2.Controllers
 					object_id = fetch.Id,
 					object_name = fetch.Repository.Name,
 					object_type = "Repository",
-					acs = fetch.ACS,
+					ACS = fetch.ACS,
 					user_name = fetch.User.FullName
 				};
 			}
