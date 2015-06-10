@@ -16,7 +16,7 @@ namespace DocSpin2
 			routes.MapRoute(
 				name: "ACLs",
 				url: "ACLs/{type}/{id}/{action}",
-				defaults: new { controller = "ACLs" }
+				defaults: new { controller = "ACLs", action = "Details" }
 			);
 
 			routes.MapRoute(

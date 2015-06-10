@@ -140,7 +140,7 @@ namespace DocSpin2.Controllers
 						UserId = acl.user_id
 					}); 
 				db.SaveChanges();
-				return RedirectToAction("Index", new { id = acl.object_id, type = acl.object_type });
+				return RedirectToAction("Details", new { id = acl.object_id, type = acl.object_type });
             }
 
 			ViewData["UsersList"] =
@@ -201,7 +201,7 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
 		public ActionResult DeleteConfirmed([Bind(Include = "object_id,object_type")] ACLDeleteModel acl)
         {
-			if (acl.object_id == null || !(acl.object_type == "Repository" || acl.object_type == "Document"))
+			if (!(acl.object_type == "Repository" || acl.object_type == "Document"))
 			{
 				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 			}
@@ -222,7 +222,7 @@ namespace DocSpin2.Controllers
 			}
 
 			db.SaveChanges();
-			return RedirectToAction("Index", new { id = acl.object_id, type = acl.object_type });
+			return RedirectToAction("Details", new { id = acl.object_id, type = acl.object_type });
 		}
 
         protected override void Dispose(bool disposing)
