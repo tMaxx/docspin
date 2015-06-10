@@ -1,28 +1,48 @@
 ﻿@model DocSpin2.Models.AccessControlSetting?
 @using DocSpin2.Models
 @{
-	var acsarray = new[] {
-		AccessControlSetting.Read,
-		AccessControlSetting.Comment,
-		AccessControlSetting.Write,
-		AccessControlSetting.SupervisorOnly
-	};
+	AccessControlSetting[] acsarray;
+	if (ViewData.ContainsKey("with_none"))
+	{
+		acsarray = new[] {
+			AccessControlSetting.None,
+			AccessControlSetting.Read,
+			AccessControlSetting.Comment,
+			AccessControlSetting.Write,
+			AccessControlSetting.SupervisorOnly
+		};
+	}
+	else
+	{ 
+		acsarray = new[] {
+			AccessControlSetting.Read,
+			AccessControlSetting.Comment,
+			AccessControlSetting.Write,
+			AccessControlSetting.SupervisorOnly
+		};
+	}
 	AccessControlSetting fmodel = Model ?? AccessControlSetting.None;
 }
 <div class="form-group">
 	@Html.LabelForModel("Access for item", htmlAttributes: new { @class = "control-label col-md-2" })
 	<div class="col-lg-5">
 		@foreach (AccessControlSetting acs in acsarray)
-		{
-			<div class="input-group-sm @(acs == AccessControlSetting.SupervisorOnly ? "col-xs-6" : "col-xs-4")">
+		{	
+			string width = "col-xs-4";
+			if (acs == AccessControlSetting.SupervisorOnly)
+			{ width = "col-xs-6"; }
+			else if (acs == AccessControlSetting.None)
+			{ width = "col-xs-12"; }
+			
+			<div class="input-group-sm @width">
 				<div class="input-group-addon col-xs-1">
 					@if (acs != AccessControlSetting.SupervisorOnly)
 					{
-						@Html.RadioButton("ACS", (int)acs, (Model != null && ((fmodel & acs) == fmodel)))
+						@Html.RadioButton("ACS", (int)acs, ((fmodel & acs) == fmodel))
 					}
 					else
-					{ 
-						@Html.CheckBox("ACS", (Model != null && fmodel.HasFlag(acs)), new { @value = (int)acs })
+					{
+						@Html.CheckBox("ACS", fmodel.HasFlag(acs), new { @value = (int)acs })
 					}
 				</div>
 				<div class="input-group-addon">

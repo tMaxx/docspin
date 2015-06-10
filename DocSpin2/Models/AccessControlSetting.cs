@@ -32,6 +32,8 @@ namespace DocSpin2.Models
 		{
 			if ((a & 32u) == 32u)
 				return "Supervisors only";
+			if ((a & 7u) == 0u)
+				return "None (access revoked)";
 			return Enum.GetName(typeof(AccessControlSetting), a);
 		}
 

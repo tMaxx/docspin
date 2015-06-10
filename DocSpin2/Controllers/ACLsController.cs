@@ -101,7 +101,12 @@ namespace DocSpin2.Controllers
 			ViewData["UsersList"] = 
 				new SelectList(ApplicationUser.GetList(), "Id", "FullName");
 
-			return View();
+			return View(new ACLCreateModel
+			{
+				object_id = id.Value,
+				object_type = type,
+				acs = AccessControlSetting.None
+			});
         }
 
         // POST: ACLs/Create
