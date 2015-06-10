@@ -37,7 +37,12 @@
     </dl>
 </div>
 <p>
-    @if (Model.IsSupervisor){@Html.ActionLink("Edit", "Edit", new { id = Model.Id })}
+    @if (Model.IsSupervisor)
+	{
+		@Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+		<br />
+		@Html.ActionLink("ACL", "Details", "ACLs", new { id = Model.Id, type = "Repository" }, null)
+	}
     <br /> @Html.ActionLink("Back to List", "Index") 
 </p>
 

@@ -71,7 +71,16 @@
               }
         </dl>
         <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+			@if (Model.Repository.IsSupervisor)
+			{
+				@Html.ActionLink("ACL", "Details", "ACLs", new { id = Model.Id, type = "Document" }, null)
+				<br />
+			}
+			@if (DocSpin2.Util.ObjectAuth.DocumentAction(Model.Id, DocSpin2.Models.AccessControlSetting.Write) == null)
+			{
+	            @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+				<br />
+			}
             @Html.ActionLink("Back to List", "Index")
         </p>
     </div>
