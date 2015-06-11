@@ -75,6 +75,7 @@ namespace DocSpin2.Controllers
                 {
                     var fileName = "";
                     var path = "";
+
                     if (file.ContentLength > 0)
                     {
                         fileName = Path.GetFileName(file.FileName);
@@ -148,17 +149,18 @@ namespace DocSpin2.Controllers
                 {
                     var fileName = "";
                     var path = "";
+					var fileGuid = Guid.NewGuid().ToString();
                     if (file.ContentLength > 0)
                     {
                         fileName = Path.GetFileName(file.FileName);
-                        path = Path.Combine(Util.FileManager.FileFolder, fileName);
+                        path = Path.Combine(Util.FileManager.FileFolder, fileGuid);
                         file.SaveAs(path);
                     }
                  
                     DocumentVersion docv = new DocumentVersion()
                     {
                         FileTimestamp = DateTime.Now,
-                        Filename = fileName,
+                        Filename = fileGuid,
                         OriginalFilename = fileName,
                         UploadTimestamp = DateTime.Now,
                         IsRemoved = false,
@@ -230,30 +232,12 @@ namespace DocSpin2.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult FileUpload(Upload upload)
-        {
-            foreach (var file in upload.Files)
-            {
-                if (file.ContentLength > 0)
-                {
-                    var fileName = Path.GetFileName(file.FileName);
-                    var path = Path.Combine(Util.FileManager.FileFolder, fileName);
-                    file.SaveAs(path);
-                }
-            }
-
-            return RedirectToAction("FileUpload");
-        }
-
-        
-
         public ActionResult FileDownload(int? id)
         {
             DocumentVersion docv = db.DocumentVersionSet.Find(id);
 
-            byte[] fileBytes = System.IO.File.ReadAllBytes(@docv.Hash.ToString());
-            string fileName = docv.Filename;
+			byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Util.FileManager.FileFolder, fileGuid));
+            string fileName = docv.OriginalFilename;
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
 
@@ -283,7 +267,5 @@ namespace DocSpin2.Controllers
             ViewBag.UserName = ApplicationUser.CurrentUser.FullName;
             return PartialView("Comment", comment);
         }
-
-
     }
 }

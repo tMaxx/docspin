@@ -523,24 +523,24 @@
 			"file": "DocSpin2/Views/Documents/Create.cshtml",
 			"settings":
 			{
-				"buffer_size": 2848,
-				"line_ending": "Unix"
+				"buffer_size": 2915,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "DocSpin2/Controllers/DocumentsController.cs",
 			"settings":
 			{
-				"buffer_size": 6121,
-				"line_ending": "Unix"
+				"buffer_size": 8953,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "DocSpin2/Views/Documents/Details.cshtml",
+			"file": "DocSpin2/Models/Repository.cs",
 			"settings":
 			{
-				"buffer_size": 2260,
-				"line_ending": "Unix"
+				"buffer_size": 3100,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -824,6 +824,7 @@
 		"/C/Users/Nicolas/OneDrive/Projects/docspin",
 		"/C/Users/Nicolas/OneDrive/Projects/docspin/DocSpin2",
 		"/C/Users/Nicolas/OneDrive/Projects/docspin/DocSpin2/Controllers",
+		"/C/Users/Nicolas/OneDrive/Projects/docspin/DocSpin2/Models",
 		"/C/Users/Nicolas/OneDrive/Projects/docspin/DocSpin2/Views",
 		"/C/Users/Nicolas/OneDrive/Projects/docspin/DocSpin2/Views/Documents"
 	],
@@ -960,7 +961,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -1200,15 +1201,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2848,
+						"buffer_size": 2915,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1529,
-								1529
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1230,15 +1231,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6121,
+						"buffer_size": 8953,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1252,
-								1252
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1256,29 +1257,28 @@
 				},
 				{
 					"buffer": 2,
-					"file": "DocSpin2/Views/Documents/Details.cshtml",
+					"file": "DocSpin2/Models/Repository.cs",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 2260,
+						"buffer_size": 3100,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1688,
-								1688
+								3100,
+								3100
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Razor/Razor.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 674.0,
+						"translation.y": 1143.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1289,7 +1289,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1342,7 +1342,7 @@
 	"project": "docspin.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
