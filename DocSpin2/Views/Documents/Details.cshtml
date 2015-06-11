@@ -63,10 +63,12 @@
             @foreach (var item in Model.Versions)
                 {
                     <dd>
-                            @Html.ActionLink(item.Filename, "FileDownload", "Documents", new { id = item.Id }, null)
+                            @Html.ActionLink(item.OriginalFilename, "FileDownload", "Documents", new { id = item.Id }, null)
                             @Html.DisplayFor(model => item.FileTimestamp)
-                        <a href="@Url.Action("DeleteFile", "Documents", new { id = item.Id })"><img src="@Url.Content("/Content/delete.gif")" />
+                       @if (Model.Repository.IsSupervisor)
+                       { <a href="@Url.Action("DeleteFile", "Documents", new { id = item.Id })"><img src="@Url.Content("/Content/delete.gif")" />
                         </a>
+                       }
                     </dd>
               }
         </dl>

@@ -70,22 +70,23 @@ namespace DocSpin2.Controllers
 			if (ModelState.IsValid)
             {
                 db.DocumentSet.Add(document);
-                               
+
                 foreach (var file in upload.Files)
                 {
                     var fileName = "";
                     var path = "";
-
+                    var fileGuid = Guid.NewGuid().ToString();
                     if (file.ContentLength > 0)
                     {
                         fileName = Path.GetFileName(file.FileName);
-                        path = Path.Combine(Util.FileManager.FileFolder, fileName);
+                        path = Path.Combine(Util.FileManager.FileFolder, fileGuid);
                         file.SaveAs(path);
                     }
+
                     DocumentVersion docv = new DocumentVersion()
                     {
                         FileTimestamp = DateTime.Now,
-                        Filename = fileName,
+                        Filename = fileGuid,
                         OriginalFilename = fileName,
                         UploadTimestamp = DateTime.Now,
                         IsRemoved = false,
@@ -236,7 +237,7 @@ namespace DocSpin2.Controllers
         {
             DocumentVersion docv = db.DocumentVersionSet.Find(id);
 
-			byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Util.FileManager.FileFolder, fileGuid));
+			byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Util.FileManager.FileFolder, docv.Filename));
             string fileName = docv.OriginalFilename;
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }
