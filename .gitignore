@@ -229,3 +229,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+DocSpin2/Views/Shared/_Layout.cshtml
+DocSpin2/Views/Shared/_Layout.cshtml

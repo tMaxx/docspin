@@ -277,7 +277,7 @@ namespace DocSpin2.Controllers
         public ActionResult Users()
         {
 			if (ApplicationUser.CurrentUserRole != UserRole.Admin)
-				return HttpStatusCodeResult(HttpStatusCode.Forbidden);
+				return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
 
 			return View(db.Users.ToList());
         }
