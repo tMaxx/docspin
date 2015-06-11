@@ -21,8 +21,14 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-					<li>@Html.ActionLink("Repositories", "Index", "Repositories")</li>
-                    <li>@Html.ActionLink("Users", "Users", "Account")</li>
+					@if (DocSpin2.Models.ApplicationUser.CurrentUserRole != DocSpin2.Models.UserRole.None)
+					{
+						<li>@Html.ActionLink("Repositories", "Index", "Repositories")</li>
+						if (DocSpin2.Models.ApplicationUser.CurrentUserRole == DocSpin2.Models.UserRole.Admin)
+						{
+							<li>@Html.ActionLink("Users", "Users", "Account")</li>
+						}
+					}
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
