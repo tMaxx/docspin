@@ -236,7 +236,7 @@ namespace DocSpin2.Controllers
         {
             DocumentVersion docv = db.DocumentVersionSet.Find(id);
 
-			byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Util.FileManager.FileFolder, fileGuid));
+			byte[] fileBytes = System.IO.File.ReadAllBytes(Path.Combine(Util.FileManager.FileFolder, docv.Filename));
             string fileName = docv.OriginalFilename;
             return File(fileBytes, System.Net.Mime.MediaTypeNames.Application.Octet, fileName);
         }

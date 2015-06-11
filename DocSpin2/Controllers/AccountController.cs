@@ -276,8 +276,10 @@ namespace DocSpin2.Controllers
 
         public ActionResult Users()
         {
+			if (ApplicationUser.CurrentUserRole != UserRole.Admin)
+				return HttpStatusCodeResult(HttpStatusCode.Forbidden);
 
-            return View(db.Users.ToList());
+			return View(db.Users.ToList());
         }
 
         protected override void Dispose(bool disposing)
