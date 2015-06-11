@@ -38,7 +38,7 @@ namespace DocSpin2.Util
 
 			using (var db = ApplicationDbContext.Create())
 			{
-				Repository repo = db.RepositorySet.First(r => r.Id == id);
+				Repository repo = db.RepositorySet.FirstOrDefault(r => r.Id == id);
 				if (repo == null)
 					return new ObjectAuthError(
 						ObjectAuthErrorReason.RepositoryNotFound,
@@ -80,7 +80,7 @@ namespace DocSpin2.Util
 					"Wrong document id");
 			using (var db = ApplicationDbContext.Create())
 			{
-				Document doc = db.DocumentSet.First(d => d.Id == id);
+				Document doc = db.DocumentSet.FirstOrDefault(d => d.Id == id);
 				if (doc == null)
 					return new ObjectAuthError(
 						ObjectAuthErrorReason.DocumentNotFound,

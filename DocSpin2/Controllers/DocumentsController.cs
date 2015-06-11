@@ -63,7 +63,7 @@ namespace DocSpin2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Name,Description,ACS,RepositoryId")] Document document, Upload upload)
         {
-			var e = ObjectAuth.DocumentAction(int.Parse(this.Request["RepositoryId"]), AccessControlSetting.Write);
+			var e = ObjectAuth.RepositoryAction(int.Parse(this.Request["RepositoryId"]), AccessControlSetting.Write);
 			if (e != null)
 				return View("AuthError", e);
 
